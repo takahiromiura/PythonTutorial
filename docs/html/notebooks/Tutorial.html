@@ -1,0 +1,2298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python チュートリアル &mdash; Python Tutorial 1.00 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Python を使ったデータ分析" href="DataAnalysis.html" />
+    <link rel="prev" title="Python 事始め" href="../rst/Python事始め.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../rst/index.html" class="icon icon-home"> Python Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../rst/Python事始め.html">Python 事始め</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#変数">変数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#エラー">エラー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#基本的な型">基本的な型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#int-(整数）型">int (整数）型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-(小数点)-型">float (小数点) 型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#基本的な演算子">基本的な演算子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#str-(文字列)-型">str (文字列) 型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-(リスト)">list (リスト)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dict-(辞書)-型">dict (辞書) 型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple-(タプル)">tuple (タプル)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#スライス">スライス</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#メソッド-(Method)">メソッド (Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ループ文">ループ文</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while">while</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#条件分岐">条件分岐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#関数">関数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#無名関数">無名関数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#スコープ">スコープ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#モジュールのインポート">モジュールのインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#属性-(Attribute)">属性 (Attribute)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#組み込み関数">組み込み関数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type:-型を調べる">type: 型を調べる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#len:-データ型の長さを調べる">len: データ型の長さを調べる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#データ型を作る">データ型を作る</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataAnalysis.html">Python を使ったデータ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html#css">CSS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../rst/index.html">Python Tutorial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../rst/index.html">Docs</a> &raquo;</li>
+        
+      <li>Python チュートリアル</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/notebooks/Tutorial.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Python-チュートリアル">
+<h1>Python チュートリアル<a class="headerlink" href="#Python-チュートリアル" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>実行するとエラーになるものは、<code class="docutils literal notranslate"><span class="pre">#</span></code> でコメントアウトしています。</p>
+<p>実行するときは、<code class="docutils literal notranslate"><span class="pre">#</span></code> を外してください。</p>
+<p>ここでは、Python の基本的な文法などを見ていきます。</p>
+<p>まずは、お馴染みの。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello World!
+</pre></div></div>
+</div>
+<p>実はこの 1 行に Python のエッセンスが詰まっています。</p>
+<p>C などの言語では、先程の文を出すには 3 行ほど必要なのですが、その時にいろいろな <strong>おまじない</strong> を書かなければいけません。</p>
+<p>Python では、こうしたおまじないを極力書かないで済むので、自分がどういった操作をしているかが分かりやすく、学習が容易になるのです。</p>
+<p>Python を起動すると、<strong>組み込み型</strong>という基本的な型が使えます。</p>
+<p>型ごとに持っている機能が異なります。</p>
+<p>例えば、整数を扱うための型、文字列を扱うための型、その他にも様々な型があります。</p>
+<p>また、整数型、文字列型、関数などを全てを総称して <code class="docutils literal notranslate"><span class="pre">オブジェクト</span></code> といいます。</p>
+<p>まずは、<strong>組み込み型</strong> を学んで、Python に慣れていきましょう。</p>
+<div class="section" id="変数">
+<h2>変数<a class="headerlink" href="#変数" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>さて、組み込み型を説明する前に、変数について説明しましょう。</p>
+<p>変数には数字や文字などを格納することができます。</p>
+<p>例えば、 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">apple</span> <span class="pre">=</span> <span class="pre">100</span></code> とすれば、 <code class="docutils literal notranslate"><span class="pre">apple</span></code> に 100 という値が格納されます。</p>
+<p>数字を変数名の最初にすることは許されていません。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">apple</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<p>変数の中身を呼び出すには、変数名をタイプします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">apple</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>100
+</pre></div>
+</div>
+</div>
+<p>何も格納していない変数を参照した場合は、エラーが返ってきます。</p>
+<p>例えば、次を実行すると、<code class="docutils literal notranslate"><span class="pre">NameError</span></code> が返ってきます。 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">orange</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># orange</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="エラー">
+<h2>エラー<a class="headerlink" href="#エラー" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プログラミングをしていく中で、エラーは必ず起こります。</p>
+<p>ですが、エラーが出たからといって、気落ちしないでください。</p>
+<p>エラーが起きたら、エラーの内容をよく読んでみましょう。 例えば、先の場合は、 <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'orange'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> という内容です。これは、<code class="docutils literal notranslate"><span class="pre">orange</span></code> という変数はまだ定義されていませんということです。</p>
+<p>それでは、次に <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">orange</span> <span class="pre">=</span> <span class="pre">150</span></code> と打ってみてから、<code class="docutils literal notranslate"><span class="pre">orange</span></code>を参照してみましょう。今度はエラーが出ないはずです。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">orange</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">orange</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>150
+</pre></div>
+</div>
+</div>
+<p>エラーの内容を読んでもよくわからなかった場合、エラーの内容をコピーして、ググりましょう。</p>
+<p>プログラミングに関する Q &amp; A ウェブサイトとして、<a class="reference external" href="https://stackoverflow.com/">stack overflow</a> が有名です。</p>
+<p>ほとんどの場合、こちらを参照すれば同じような問題を抱えた人がいて、それに対する答えも提供されていることでしょう（基本的に英語です）。</p>
+<p>また、 <a class="reference external" href="https://teratail.com/">teratail</a> という日本のサイトもあります。</p>
+<p>調べても答えが得られなかった場合は、上記の2つで質問してみるのもよいでしょう。</p>
+<p>他にも、モジュールの使い方がいまいちわからない場合、 <a class="reference external" href="http://qiita.com/">Qiita</a> で検索してみましょう。</p>
+<p>そのモジュールを使用した記事があるかもしれません。</p>
+</div>
+<div class="section" id="基本的な型">
+<h2>基本的な型<a class="headerlink" href="#基本的な型" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="int-(整数）型">
+<h3>int (整数）型<a class="headerlink" href="#int-(整数）型" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>整数型は値に整数を持ちます。</p>
+<p>あまり説明する必要はないかもしれません。</p>
+<p>次の例は整数型です。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="float-(小数点)-型">
+<h3>float (小数点) 型<a class="headerlink" href="#float-(小数点)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>小数点型は値に小数点を持ちます。</p>
+<p>整数の後に <code class="docutils literal notranslate"><span class="pre">.</span></code> をつけることで小数点型になります。</p>
+<p>次の例は小数点型です。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="基本的な演算子">
+<h3>基本的な演算子<a class="headerlink" href="#基本的な演算子" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Python では四則演算、累乗、剰余は次のように行います。</p>
+<ul class="simple">
+<li><p>加算: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>減算: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>乗算: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>除算: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>累乗: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p>剰余: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">4</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>28
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">8</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2.6666666666666665
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>16
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">6</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="str-(文字列)-型">
+<h3>str (文字列) 型<a class="headerlink" href="#str-(文字列)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>文字列型は値に文字列を持ちます。</p>
+<p>文字列の前後を シングルクォート ` かダブルクォート 」 で囲みます。</p>
+<p>次の例は文字列型です。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="s1">&#39;string&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;string&#39;
+</pre></div>
+</div>
+</div>
+<p>文字列は足すことができます。</p>
+<p>しかし、引くことはできません。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="s1">&#39;str&#39;</span> <span class="o">+</span> <span class="s1">&#39;ing&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;string&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># &#39;string&#39; - &#39;ing&#39;</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-(リスト)">
+<h3>list (リスト)<a class="headerlink" href="#list-(リスト)" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リストは複数の値を持つことができます。リストを作るには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を使います。</p>
+<p>複数の要素を持つリストを作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+<p>リストの中には、異なる型を入れられます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 3.14, &#39;string&#39;]
+</pre></div>
+</div>
+</div>
+<p>リストとリストは足すことができますが、引くことはできません。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+<p>リストの各要素を参照するには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を用い、かぎかっこの中に参照したい要素の番号（インデックス）を入れます。</p>
+<p>R とは違い、 Python では、要素の番号は 0 から始まります（ R では 1 から）。</p>
+<p>リストにない番号を参照するとエラーが返ってきます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">num_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># num_list[4]</span>
+
+</pre></div>
+</div>
+</div>
+<p>マイナスの番号を入れると、後ろから参照します。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dict-(辞書)-型">
+<h3>dict (辞書) 型<a class="headerlink" href="#dict-(辞書)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>辞書は、キーと値をセットで使います。辞書を作るには、なみかっこ <code class="docutils literal notranslate"><span class="pre">{}</span></code> を使います。</p>
+<p><code class="docutils literal notranslate"><span class="pre">{キー：値}</span></code> という順番で各要素を作成します。複数のキーと値を持つ辞書を作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>{&#39;apple&#39;: 100, &#39;orange&#39;: 150}
+</pre></div>
+</div>
+</div>
+<p>辞書の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[]</span></code> を用います。</p>
+<p><code class="docutils literal notranslate"><span class="pre">[]</span></code> の中にキーとなる値を入れると、そのキーに対応する値が返ってきます。</p>
+<p>キー以外の値を参照しようとすると、エラーが返ってきます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">}</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>{&#39;apple&#39;: 100, &#39;orange&#39;: 150}
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fruits</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>100
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># fruits[&#39;melon&#39;]</span>
+
+</pre></div>
+</div>
+</div>
+<p>新たにキーと値を追加するには、<code class="docutils literal notranslate"><span class="pre">辞書[キー]</span> <span class="pre">=</span> <span class="pre">値</span></code> とします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fruits</span><span class="p">[</span><span class="s1">&#39;melon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">fruits</span><span class="p">[</span><span class="s1">&#39;melon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>500
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple-(タプル)">
+<h3>tuple (タプル)<a class="headerlink" href="#tuple-(タプル)" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>タプルはリストと同じように複数の要素を持つことができます。また、各要素の参照もリストと同じです。</p>
+<p>しかし、リストと違うのは、要素の追加、削除、編集ができないということです。</p>
+<p>意図せず値を書き換えてしまうことを防ぎたい場合は、タプルを使うとよいでしょう。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">car</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;taxi&#39;</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">)</span>
+<span class="n">car</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&#39;taxi&#39;, &#39;bus&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">car</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;taxi&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># car[0] = &#39;truck&#39;</span>
+
+</pre></div>
+</div>
+</div>
+<p>ちなみに、要素が 1 つのみのタプルを作るときには、<code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">)</span></code> とします。</p>
+</div>
+<div class="section" id="スライス">
+<h3>スライス<a class="headerlink" href="#スライス" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リスト、タプルなどで、複数の要素を参照したい場合は、<em>スライス</em> を使います。</p>
+<p>i 番目の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[i]</span></code> でしたが、 <code class="docutils literal notranslate"><span class="pre">[i:j]</span></code> とすると、i 番目から j - 1 番目までの要素を参照します。</p>
+<p>以下はリストの参照の例です。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">num_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2]
+</pre></div>
+</div>
+</div>
+<p>k 番目からの要素を全て参照する場合には、<code class="docutils literal notranslate"><span class="pre">[k:]</span></code> とします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[2, 3]
+</pre></div>
+</div>
+</div>
+<p>逆に、0 番目から k - 1 番目までを参照するには、<code class="docutils literal notranslate"><span class="pre">[:k]</span></code> とします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num_list</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2]
+</pre></div>
+</div>
+</div>
+<p>ちなみに、文字列もインデックスが振られているので、文字列の一部のみを参照することができます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="s1">&#39;string&#39;</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="メソッド-(Method)">
+<h2>メソッド (Method)<a class="headerlink" href="#メソッド-(Method)" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オブジェクトには、固有の関数が用意されています。これをメソッドといいます。</p>
+<p>文字列型には例えば、次のようなメソッドが用意されています。 <code class="docutils literal notranslate"><span class="pre">lower:</span> <span class="pre">文字列を小文字にする</span>&#160; <span class="pre">upper:</span> <span class="pre">文字列を大文字にする</span>&#160; <span class="pre">split:</span> <span class="pre">文字列を指定した境界にしたがって、分割し、リストを作る</span></code></p>
+<p>リスト型には例えば、次のようなメソッドが用意されています。 <code class="docutils literal notranslate"><span class="pre">append:</span> <span class="pre">リストに要素を追加する</span>&#160; <span class="pre">extend:</span> <span class="pre">リストにリストを追加する</span>&#160; <span class="pre">remove:</span> <span class="pre">指定した値をリストから除外する</span></code> メソッドを使うには、型を作成し、<code class="docutils literal notranslate"><span class="pre">オブジェクト.メソッド(引数)</span></code> とします。例を見てみましょう。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">jp</span> <span class="o">=</span> <span class="s1">&#39;japan&#39;</span>
+<span class="n">jp</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;JAPAN&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">JP</span> <span class="o">=</span> <span class="s1">&#39;JAPAN&#39;</span>
+<span class="n">JP</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;japan&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">countries</span> <span class="o">=</span> <span class="s1">&#39;japan,korea,america&#39;</span>
+<span class="n">countries</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;japan&#39;, &#39;korea&#39;, &#39;america&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">odd_num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">odd_num</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 3, 5]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">odd_num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">odd_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">odd_num</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 3, 5, 7]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">odd_num</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">odd_num</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 3, 5, 7, 9, 11]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">odd_num</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">odd_num</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 3, 7, 9, 11]
+</pre></div>
+</div>
+</div>
+<p>メソッドには破壊的メソッドと非破壊的メソッドがあります。</p>
+<p>破壊的メソッドは、メソッドを呼び出したオブジェクトの値そのものを変更します。</p>
+<p>一方、非破壊的メソッドは、新たなオブジェクトを返します。</p>
+<p>例えば、<code class="docutils literal notranslate"><span class="pre">lower</span></code>, <code class="docutils literal notranslate"><span class="pre">upper</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> は非破壊的メソッド、　<code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code> は破壊的メソッドです。</p>
+<p>引数が必要でない場合も、<code class="docutils literal notranslate"><span class="pre">()</span></code> を忘れると、関数の戻り値ではなく関数自体が返ってきますので注意してください。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">jp</span><span class="o">.</span><span class="n">upper</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;function str.upper()&gt;
+</pre></div>
+</div>
+</div>
+<p>これまでに、いくつかの基本的な型を説明してきました。</p>
+<p>各オブジェクトには様々な特徴があり、またそれぞれ固有の関数（メソッド）を持っています。</p>
+<p>くぎを打つ場合には金づちを使い、木を切る場合にはのこぎりを使います。</p>
+<p>同じように、使用目的によって、型を使い分けることが重要です。</p>
+</div>
+<div class="section" id="ループ文">
+<h2>ループ文<a class="headerlink" href="#ループ文" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>似たような操作を繰り返したい場合、例えば、1 から 10 までの整数を順に出力したい場合などには、ループ文を使うとよいでしょう。</p>
+<p>Python では、 <code class="docutils literal notranslate"><span class="pre">for,</span> <span class="pre">while</span></code> がよく用いられます。1 つずつその性質を見ていきましょう。</p>
+<div class="section" id="for">
+<h3>for<a class="headerlink" href="#for" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>for は、リストやタプルなどからその中の要素を逐次的に引き出す場合に使われます。</p>
+<p>例えば、次のようにします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+2
+3
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> はその名の通り、<code class="docutils literal notranslate"><span class="pre">()</span></code> 内の値を出力したい場合に用いる関数です。</p>
+<p>上の文では、<code class="docutils literal notranslate"><span class="pre">i</span></code> にリスト <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> の各要素が順に代入されていきます。</p>
+<p>Python では、他のプログラミング言語と違い、<strong>インデント（字下げ）</strong> が意味を持ちます。</p>
+<p>ループや、関数、クラスの定義の際には、直下のインデントした文がループ文、関数、クラスの定義の文になります。</p>
+<p>詳しく見てみましょう。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="n">k</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+4
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">+=</span> <span class="pre">1</span></code> は、<code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">i</span></code> と同じです。</p>
+<p>インデントしている文はループが実行されていますが、その下のインデントがされていない文はループが実行されていません。</p>
+<p>したがって、<code class="docutils literal notranslate"><span class="pre">j</span></code> は <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> の値が格納されますが、<code class="docutils literal notranslate"><span class="pre">k</span></code> はループの最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> がとる値、<code class="docutils literal notranslate"><span class="pre">4</span></code> のみが格納されます。</p>
+<p>また、特に理由のないインデントは、エラーになります。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 1</span>
+<span class="c1">#     &#39;a&#39;</span>
+
+</pre></div>
+</div>
+</div>
+<p>もちろん、インデントがない場合もエラーになります。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># for i in [1, 3 ,4]:</span>
+<span class="c1"># print(i)</span>
+
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> は <code class="docutils literal notranslate"><span class="pre">range</span></code> 型を使って、 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">4)</span></code> でも実行できます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> 型は <code class="docutils literal notranslate"><span class="pre">range(b)</span></code> とした場合、<code class="docutils literal notranslate"><span class="pre">0</span></code> から <code class="docutils literal notranslate"><span class="pre">b-1</span></code> までの値を順に返します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b)</span></code> のときは、<code class="docutils literal notranslate"><span class="pre">a</span></code> から <code class="docutils literal notranslate"><span class="pre">b-1</span></code> までです。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+1
+2
+3
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+2
+3
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="while">
+<h3>while<a class="headerlink" href="#while" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> は指定した条件式が真の場合にループ文を実行し、条件式が偽になるとループをやめます。</p>
+<p>例えば、次のようにします。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+1
+2
+3
+4
+</pre></div></div>
+</div>
+<p>上の文は <code class="docutils literal notranslate"><span class="pre">i</span></code> が 5 より小さい場合という条件式が真の場合にループ文を実行するということです。</p>
+<p>また、ループ文の最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> の値に 1 を足しています。</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> は終わらないループを繰り返すことにもなりかねないので、注意しましょう。</p>
+<p>ループが終わらない場合は、 ■ を押すか、<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> でコードの実行を中止しましょう。</p>
+</div>
+</div>
+<div class="section" id="条件分岐">
+<h2>条件分岐<a class="headerlink" href="#条件分岐" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>条件分岐は <code class="docutils literal notranslate"><span class="pre">if</span></code> で行えます。</p>
+<p>実行文はインデントで字下げします。</p>
+<p>次のような形になります。 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">if</span> <span class="pre">[条件式]:</span>&#160;&#160;&#160; <span class="pre">実行文</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> によって複数の条件分岐ができます。</p>
+<p>上から条件式を満たすかが判断されていきます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">else</span></code> は、<code class="docutils literal notranslate"><span class="pre">if</span></code> と <code class="docutils literal notranslate"><span class="pre">elif</span></code> を満たさなかった場合のみ実行されます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+other
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="関数">
+<h2>関数<a class="headerlink" href="#関数" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>何度も同じような操作を何度も使うには、関数を用いましょう。</p>
+<p>関数を使うと、操作を再利用することができます。</p>
+<p>関数は次のように <code class="docutils literal notranslate"><span class="pre">def</span></code> を使って定義します。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">return_2</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">return_2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<p>ループ文の場合と同じで、関数の定義もインデントして書きます。</p>
+<p>引数をもつ関数を定義するには引数を <code class="docutils literal notranslate"><span class="pre">()</span></code> 内で指定します。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">multiple_2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">x2</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">multiple_2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>6
+</pre></div>
+</div>
+</div>
+<p>関数によって返される戻り値は <code class="docutils literal notranslate"><span class="pre">return</span></code> で指定します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">return</span></code> の下は実行されないので、注意してください。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">with_print</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;above return&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;under return&#39;</span><span class="p">)</span>
+
+<span class="n">with_print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+above return
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<p>引数の数を任意にすることも可能です。 引数に <code class="docutils literal notranslate"><span class="pre">*args</span></code> を入れると、指定した数以上の引数は <code class="docutils literal notranslate"><span class="pre">args</span></code> にタプルとして格納されます。</p>
+<p>また、引数に <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> を入れると、指定した数以上の <code class="docutils literal notranslate"><span class="pre">key=value</span></code> という引数は <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> に辞書として格納されます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">multi_arg</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">multi_arg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(1, 2, 3)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">multi_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">multi_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;a&#39;: 1, &#39;b&#39;: 2}
+</pre></div></div>
+</div>
+<div class="section" id="無名関数">
+<h3>無名関数<a class="headerlink" href="#無名関数" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">def</span></code> とは違い、簡単にかける無名関数というものあります。<code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">function</span></code> とすることで無名関数を作成できます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="スコープ">
+<h3>スコープ<a class="headerlink" href="#スコープ" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関数内で変数を定義しても、関数外で参照することはできません。見てみましょう。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">local_x</span><span class="p">():</span>
+    <span class="n">who_am_I</span> <span class="o">=</span> <span class="s1">&#39;local variable&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">who_am_I</span><span class="p">)</span>
+
+<span class="n">local_x</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+local variable
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># who_am_I</span>
+
+</pre></div>
+</div>
+</div>
+<p>確かに関数内では変数を定義しているし、関数内では参照できているのですが、関数外では参照することができませんでした。</p>
+<p>変数や関数を参照できる範囲を <strong>スコープ</strong> と呼びます。</p>
+<p>関数内で定義した変数を <strong>ローカル変数</strong> といいます。ローカル変数のスコープは定義された変数の中になります。</p>
+<p>一方、いままで定義していた変数は <strong>グローバル変数</strong> といいます。こちらは関数内外で参照することができます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">I_am</span> <span class="o">=</span> <span class="s1">&#39;global variable&#39;</span>
+<span class="n">I_am</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;global variable&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">ref_global</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">I_am</span><span class="p">)</span>
+
+<span class="n">ref_global</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+global variable
+</pre></div></div>
+</div>
+<p>さて、こうしたローカル変数およびスコープというものがあると何が嬉しいのでしょうか。</p>
+<p>一つは、関数の影響を最小限にとどめられるということです。</p>
+<p>例えば、関数の中と外で <code class="docutils literal notranslate"><span class="pre">x</span></code> という変数を定義していて、</p>
+<p>関数を呼び出すたびに <code class="docutils literal notranslate"><span class="pre">x</span></code> の値が書き換わっていたらどうでしょうか。</p>
+<p>変数を定義するたびに、関数の中の変数もチェックして、変数名が被っていないかを考えなくてはいけません。</p>
+<p>数行程度ならばできるでしょうが、数百、数千行のコードとなると、全ての変数名を把握するのは難しいでしょう。</p>
+<p>ローカル変数は参照の範囲をあえて狭めることによって、そういったことを防ぐ役割を果たすのです。</p>
+</div>
+</div>
+<div class="section" id="モジュールのインポート">
+<h2>モジュールのインポート<a class="headerlink" href="#モジュールのインポート" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Python を起動したときにすでにいくつかの型、関数を使うことができます（これらを組み込み型、組み込み関数といいます）。</p>
+<p>R を使ったことがある人はおなじみかも知れませんが、R では <code class="docutils literal notranslate"><span class="pre">library</span></code> を使うことによって、使える型、関数を追加することができます。</p>
+<p>Python では、モジュールを追加するには、<code class="docutils literal notranslate"><span class="pre">import</span></code> を使います。</p>
+<p>ここでは、時間に関する操作に役立つ、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールを使えるようにしてみましょう。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+<p>無事追加できた場合には、特になにも結果がでません。</p>
+<p>存在しないモジュールを追加しようとした場合には、エラーが返ってきます。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># import datetime_time</span>
+
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールには、様々なデータ型が用意されています。</p>
+<p>モジュールから特定の部分のみを追加したい場合は、<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">モジュール名</span> <span class="pre">import</span> <span class="pre">名前</span></code> とします。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+</pre></div>
+</div>
+</div>
+<p>追加したモジュールの関数を使いたい場合は、<code class="docutils literal notranslate"><span class="pre">モジュール名.名前</span></code> で使用できます。</p>
+<p>それでは、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型を作ってみましょう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型は <code class="docutils literal notranslate"><span class="pre">datetime(year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">minute,</span> <span class="pre">second)</span></code> のように作成します（最後の 2 つは省略可能です）。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>追加するモジュール名が長くて、いちいち打つのが面倒な場合、 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">モジュール名</span> <span class="pre">as</span> <span class="pre">適当な名前</span></code> とすれば、指定した名前でモジュールを呼び出せます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="kn">as</span> <span class="nn">dt</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>datetime.datetime(2017, 9, 11, 0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="属性-(Attribute)">
+<h2>属性 (Attribute)<a class="headerlink" href="#属性-(Attribute)" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あるオブジェクトを作成した場合、そのオブジェクトには固有の変数が追加されることがあります。</p>
+<p>その変数を属性といいます。</p>
+<p>例えば、<code class="docutils literal notranslate"><span class="pre">datetime</span></code>型の属性は、<code class="docutils literal notranslate"><span class="pre">year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">mitute,</span> <span class="pre">second</span></code> などです。</p>
+<p>属性を呼び出すには、<code class="docutils literal notranslate"><span class="pre">オブジェクト.属性名</span></code> とします。</p>
+<p>メソッドと違うのは、属性は関数ではなく、変数であるということです。</p>
+<p>なので、<code class="docutils literal notranslate"><span class="pre">()</span></code> といった引数は無用です。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">today</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2017
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">today</span><span class="o">.</span><span class="n">month</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="組み込み関数">
+<h2>組み込み関数<a class="headerlink" href="#組み込み関数" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>最後に、Python の組み込み関数を少し見てみましょう。</p>
+<p>完全な一覧は <a class="reference external" href="https://docs.python.jp/3/library/functions.html">ドキュメント</a> を参照してください。</p>
+<div class="section" id="type:-型を調べる">
+<h3>type: 型を調べる<a class="headerlink" href="#type:-型を調べる" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ある変数やモジュールの一部がデータ型なのか関数なのか、よくわからない場合は、<code class="docutils literal notranslate"><span class="pre">type()</span></code> を使います。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>int
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>list
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">func_type</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">func_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="len:-データ型の長さを調べる">
+<h3>len: データ型の長さを調べる<a class="headerlink" href="#len:-データ型の長さを調べる" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リストやタプル、文字列の長さを調べるときに使います。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">three</span> <span class="o">=</span> <span class="s1">&#39;three&#39;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">three</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="データ型を作る">
+<h3>データ型を作る<a class="headerlink" href="#データ型を作る" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>int, float, str, list, tuple, dict などは、指定の型に変換します。</p>
+<p>ただし、例えば文字列を整数型に変換することはできないなどの規則があります。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 小数点型 -&gt; 整数型</span>
+<span class="nb">int</span><span class="p">(</span><span class="mf">4.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>4
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 整数型 -&gt; 小数点型</span>
+<span class="nb">float</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>4.0
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 文字列型 -&gt; リスト</span>
+<span class="nb">list</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;s&#39;, &#39;t&#39;, &#39;r&#39;, &#39;i&#39;, &#39;n&#39;, &#39;g&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 文字列型 -&gt; タプル</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&#39;s&#39;, &#39;t&#39;, &#39;r&#39;, &#39;i&#39;, &#39;n&#39;, &#39;g&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># リスト -&gt; 辞書型</span>
+<span class="nb">dict</span><span class="p">([[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;melon&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>{&#39;apple&#39;: 100, &#39;melon&#39;: 1000}
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># リスト -&gt; タプル</span>
+<span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(1, 3, 5)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># リスト -&gt; 文字列型</span>
+<span class="nb">str</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;[1, 3, 5]&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># タプル -&gt; 辞書型</span>
+<span class="nb">dict</span><span class="p">(((</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;melon&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>{&#39;apple&#39;: 100, &#39;melon&#39;: 1000}
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># タプル -&gt; リスト</span>
+<span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># タプル -&gt; 文字列型</span>
+<span class="nb">str</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;(1, 2, 3)&#39;
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 辞書 -&gt; リスト</span>
+<span class="nb">list</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;melon&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;apple&#39;, &#39;melon&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 辞書 -&gt; タプル</span>
+<span class="nb">tuple</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;melon&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&#39;apple&#39;, &#39;melon&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 辞書 -&gt; 文字列型</span>
+<span class="nb">str</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;melon&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&quot;{&#39;apple&#39;: 100, &#39;melon&#39;: 10000}&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DataAnalysis.html" class="btn btn-neutral float-right" title="Python を使ったデータ分析" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../rst/Python事始め.html" class="btn btn-neutral float-left" title="Python 事始め" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Takahiro Miura
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

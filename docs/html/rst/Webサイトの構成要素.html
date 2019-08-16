@@ -1,0 +1,707 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTML &mdash; Python Tutorial 1.00 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="Python を使ったデータ分析" href="../notebooks/DataAnalysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Python事始め.html">Python 事始め</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Tutorial.html">Python チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/DataAnalysis.html">Python を使ったデータ分析</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">ドキュメントツリー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">要素の順番</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">ブロックレベルの要素</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#h">h 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#p">p 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table">table 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ul">ul 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ol">ol 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dl">dl 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#div">div 要素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">インラインレベルの要素</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a">a 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#img">img 要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#span">span 要素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">入力フォーム</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input">input 要素</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">テキスト</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">チェックボックス</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">ラジオボタン</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">送信ボタン</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">セレクトボックス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">フォーム 要素</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#css">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id-class">id, class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">結合子</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#e-f">E F</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tutorial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>HTML</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/Webサイトの構成要素.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="html">
+<h1>HTML<a class="headerlink" href="#html" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>HTML (HyperText Markup Language) は名前こそとっつきづらいですが、知ってしまえばそこまで難しいものではありません。
+HTML は IE, Firefox, GoogleChrome など、ブラウザ上に文書を表示するためのマークアップ言語です。
+そもそも、マークアップ言語とはなんでしょう。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>例えば、HTMLでは <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>太字<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> の表示はこのように書きます。
+</pre></div>
+</div>
+<p>この文を html として保存して、ブラウザで表示すると、次のように表示されるはずです。</p>
+例えば、HTMLでは <b>太字</b> の表示はこのように書きます。
+<p></p><p><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code> に囲まれている文字が太字になりました。
+<code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code> を <strong>タグ</strong> といいます。
+タグは、ブラウザが HTML を表示するときに、どこを太字にするか、大文字にするか、斜体にするかを教える目印になります。
+マークアップ言語とは、このようにタグを使って文書の表示を操作する言語です。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ちなみに、理論経済学者のほとんどが使っていると言われている、TeX 言語もマークアップ言語の一つです。
+TeX のマクロパッケージ、LaTeXでは <code class="docutils literal notranslate"><span class="pre">\textbf{}</span></code> で文字を囲みます。
+ここでは、<code class="docutils literal notranslate"><span class="pre">\textbf{}</span></code> がタグになります。</p>
+</div>
+<p>タグに囲まれているものを要素の内容と呼びます。
+タグの始まりを <strong>開始タグ</strong> と呼び、タグの終わりを <strong>終了タグ</strong> と呼びます。
+終了タグは、<code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code> ではなく、<code class="docutils literal notranslate"><span class="pre">&lt;/b&gt;</span></code> であることに注意してください。</p>
+<p>タグに含まれている、<code class="docutils literal notranslate"><span class="pre">b</span></code> を <strong>要素</strong> と呼びます。
+最初に紹介したのは、内容を太字にする、<code class="docutils literal notranslate"><span class="pre">b</span></code> 要素です。
+HTML にはその他にも様々な要素があります。</p>
+<div class="section" id="id1">
+<h2>ドキュメントツリー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HTML には様々な要素があり、ほとんどの HTML 文書は要素が入れ子になっています。
+要素の入れ子構造の全体を表したのが、ドキュメントツリーで、例えば次のようなものです。</p>
+<div><svg height="295" viewBox="0 0 430 295" width="430" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="43" y="41" />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="43" y="106" />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="173" y="106" />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="173" y="171" />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="303" y="171" />
+  <rect fill="rgb(0,0,0)" height="30" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="90" x="303" y="236" />
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="40" y="35" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="85.0" y="56">html</text>
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="40" y="100" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="85.0" y="121">head</text>
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="170" y="100" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="215.0" y="121">body</text>
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="170" y="165" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="18" x="215.0" y="186">div</text>
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="300" y="165" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="12" x="345.0" y="186">ol</text>
+  <rect fill="rgb(255,255,255)" height="30" stroke="rgb(0,0,0)" width="90" x="300" y="230" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="12" x="345.0" y="251">li</text>
+  <path d="M 85 65 L 85 92" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="85,99 81,92 89,92 85,99" stroke="rgb(0,0,0)" />
+  <path d="M 85 65 L 85 82" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 85 82 L 215 82" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 215 82 L 215 92" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="215,99 211,92 219,92 215,99" stroke="rgb(0,0,0)" />
+  <path d="M 215 130 L 215 157" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="215,164 211,157 219,157 215,164" stroke="rgb(0,0,0)" />
+  <path d="M 215 130 L 215 147" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 215 147 L 345 147" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 345 147 L 345 157" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="345,164 341,157 349,157 345,164" stroke="rgb(0,0,0)" />
+  <path d="M 345 195 L 345 222" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="345,229 341,222 349,222 345,229" stroke="rgb(0,0,0)" />
+</svg>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">html</span></code> 要素は、全ての要素の最上位に位置するものです。
+その下に位置するのは、<code class="docutils literal notranslate"><span class="pre">head</span></code> 要素と <code class="docutils literal notranslate"><span class="pre">body</span></code> 要素です。
+<code class="docutils literal notranslate"><span class="pre">head</span></code> 要素はブラウザ上には表示されません。
+文字コードや検索のためのキーワードなどをここに記述します。
+私たちがブラウザ上で見る文書は、<code class="docutils literal notranslate"><span class="pre">body</span></code> 要素の中に含まれています。</p>
+<p>入れ子になっている要素間を <strong>親子関係</strong>、入れ子の階層が同じ要素間を <strong>兄弟関係</strong> と呼びます。
+例えば、上の図では、<code class="docutils literal notranslate"><span class="pre">ol</span></code> 要素と <code class="docutils literal notranslate"><span class="pre">li</span></code> 要素は親子関係、<code class="docutils literal notranslate"><span class="pre">div</span></code> 要素と <code class="docutils literal notranslate"><span class="pre">ol</span></code> 要素は兄弟関係です。</p>
+</div>
+<div class="section" id="id2">
+<h2>要素の順番<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>要素は大別して <strong>ブロック</strong> レベルと <strong>インライン</strong> レベルの要素に分かれます。
+ブロックレベルの要素はインラインレベルの要素を入れ子にできますが、その逆はできません。</p>
+<p>ある要素がブロックレベルかインラインレベルかは、文をタグで囲うと改行されるかで見分けられます。
+改行されるならば、要素はブロックレベル、改行されないならば、要素はインラインレベルです。</p>
+<p>基本的な要素を以下に紹介します。</p>
+</div>
+<div class="section" id="id3">
+<h2>ブロックレベルの要素<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="h">
+<h3>h 要素<a class="headerlink" href="#h" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">h1</span></code> ～ <code class="docutils literal notranslate"><span class="pre">h6</span></code> 要素は、見出しを表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>H1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>　<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>H2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>H3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>H4<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>H5<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>H6<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<h1>H1</h1> <h2>H2</h2> <h3>H3</h3> <h4>H4</h4> <h5>H5</h5> <h6>H6</h6>
+<p></p></div>
+<div class="section" id="p">
+<h3>p 要素<a class="headerlink" href="#p" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">p</span></code> 要素は段落を示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>段落１<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>段落２<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+段落１<p>段落２</p></div>
+<div class="section" id="table">
+<h3>table 要素<a class="headerlink" href="#table" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">table</span></code> 要素は表を表示します。
+<code class="docutils literal notranslate"><span class="pre">th</span></code> 要素で列、<code class="docutils literal notranslate"><span class="pre">tr</span></code> 要素で行、<code class="docutils literal notranslate"><span class="pre">td</span></code> でセルを表します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>列１<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>列２<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>要素11<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>要素12<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>要素21<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>要素22<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<table>
+  <th>列１</th><th>列２</th>
+  <tr>
+    <td>要素11</td> <td>要素12</td>
+  </tr>
+  <tr>
+    <td>要素21</td> <td>要素22</td>
+  </tr>
+</table>
+<p></p></div>
+<div class="section" id="ul">
+<h3>ul 要素<a class="headerlink" href="#ul" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ul</span></code> 要素は順不同箇条リストを表示します。
+<code class="docutils literal notranslate"><span class="pre">li</span></code> 要素はそのアイテムを表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>hoge<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>fuga<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul>
+  <li>hoge</li>
+  <li>fuga</li>
+</ul></div>
+<div class="section" id="ol">
+<h3>ol 要素<a class="headerlink" href="#ol" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ol</span></code> 要素は順序付き箇条リストを表示します。
+<code class="docutils literal notranslate"><span class="pre">li</span></code> 要素はそのアイテムを表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>hoge<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>fuge<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ol>
+  <li>hoge</li>
+  <li>fuge</li>
+</ol></div>
+<div class="section" id="dl">
+<h3>dl 要素<a class="headerlink" href="#dl" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dl</span></code> 要素は記述リストを表示します。
+<code class="docutils literal notranslate"><span class="pre">dt</span></code> 要素は項目、<code class="docutils literal notranslate"><span class="pre">dd</span></code> 要素は項目内容を表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>first<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>１番<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>second<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>２番<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<dl>
+  <dt>first</dt>
+    <dd>１番</dd>
+  <dt>second</dt>
+    <dd>２番</dd>
+</dl></div>
+<div class="section" id="div">
+<h3>div 要素<a class="headerlink" href="#div" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">div</span></code> 要素は文をグループ化します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>ここはグループ<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>ここは違う
+</pre></div>
+</div>
+<div>ここはグループ</div>ここは違う
+<p></p></div>
+</div>
+<div class="section" id="id4">
+<h2>インラインレベルの要素<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="a">
+<h3>a 要素<a class="headerlink" href="#a" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> 要素はハイパーリンクを付けます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://google.co.jp&#39;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<a href='https://google.co.jp'>Google</a>
+<p></p></div>
+<div class="section" id="img">
+<h3>img 要素<a class="headerlink" href="#img" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">img</span></code> 要素は画像を表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;_images/python-logo-master-v3-TM.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;30%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;30%&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/python-logo-master-v3-TM.png"><img alt="../_images/python-logo-master-v3-TM.png" src="../_images/python-logo-master-v3-TM.png" style="width: 300.5px; height: 101.5px;" /></a>
+</div>
+<div class="section" id="span">
+<h3>span 要素<a class="headerlink" href="#span" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">span</span></code> 要素は文をグループ化します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>ここはグループ<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>ここは違う
+</pre></div>
+</div>
+<span>ここはグループ</span>ここは違う
+<p></p></div>
+</div>
+<div class="section" id="id5">
+<h2>入力フォーム<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="input">
+<h3>input 要素<a class="headerlink" href="#input" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input</span></code> 要素は様々な入力フィールドを表示します。
+入力フィールドは <code class="docutils literal notranslate"><span class="pre">type</span></code> で選びます。
+<code class="docutils literal notranslate"><span class="pre">value</span></code> でチェックボックスや、ラジオボタンを押したときにどの値をデータとして送信するかを決めます。
+<code class="docutils literal notranslate"><span class="pre">name</span></code> で送信したデータがどの input 要素によるものかを識別します。</p>
+<div class="section" id="id6">
+<h4>テキスト<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">text</span></code> はテキスト入力フィールドを表示します。
+<code class="docutils literal notranslate"><span class="pre">size</span></code> で入力フィールドの大きさ、
+<code class="docutils literal notranslate"><span class="pre">maxlength</span></code> で最大入力文字数を決めます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;20&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<input name="text" type="text" size="30" maxlength="20">
+<p></p></div>
+<div class="section" id="id7">
+<h4>チェックボックス<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">checkbox</span></code> はチェックボックスを表示します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;check&quot;</span><span class="p">&gt;</span>チェックする<span class="p">&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<input name="checkbox" type="checkbox" value="check">チェックする</input>
+<p></p></div>
+<div class="section" id="id8">
+<h4>ラジオボタン<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">radio</span></code> はラジオボタンを作ります。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;banana&quot;</span><span class="p">&gt;</span>バナナ
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">&gt;</span>オレンジ
+<span class="p">&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<input type="radio" name="fruits" value="banana">バナナ
+<input type="radio" name="fruits" value="orange">オレンジ
+</input>
+<p></p></div>
+<div class="section" id="id9">
+<h4>送信ボタン<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">submit</span></code> は送信ボタンを作ります。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;送信&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<input name="submit" type="submit" value="送信"></input>
+<p></p></div>
+</div>
+<div class="section" id="id10">
+<h3>セレクトボックス<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">select</span></code> 要素はセレクトボックスを作ります。
+各アイテムは <code class="docutils literal notranslate"><span class="pre">option</span></code> で囲みます。
+<code class="docutils literal notranslate"><span class="pre">value</span></code> で送るデータの値を指定します。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;japan&quot;</span><span class="p">&gt;</span>日本<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;america&quot;</span><span class="p">&gt;</span>アメリカ<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<select name="country">
+<option value="japan">日本</option>
+<option value="america">アメリカ</option>
+</select>
+<p></p></div>
+<div class="section" id="id11">
+<h3>フォーム 要素<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input</span></code> 要素や <code class="docutils literal notranslate"><span class="pre">select</span></code> 要素はフォームの部品です。
+次のようにすることで、データを送信することができます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#39;Webサイトの構成要素.html&#39;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>好きなフルーツは？<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;banana&quot;</span><span class="p">&gt;</span>バナナ
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">&gt;</span>オレンジ
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;送信&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<form action='Webサイトの構成要素.html' method="post">
+</p>好きなフルーツは？<p>
+<input type="radio" name="fruits" value="banana">バナナ
+<input type="radio" name="fruits" value="orange">オレンジ
+<p>
+<input type="submit" value="送信"></input>
+</p>
+</form></div>
+</div>
+</div>
+<div class="section" id="css">
+<h1>CSS<a class="headerlink" href="#css" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>これで、基礎的な HTML の書き方は分かったと思います。
+それでは、以下の HTML の文を Web ブラウザで見てみましょう。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HTML の例<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+こんにちは！
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>この文章は HTML で書きました！<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>この講習会の目的は　Python で Web スクレイピングをできるようになることです。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>以下が Python のサイトです。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://www.python.org/&#39;</span><span class="p">&gt;</span>Python<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>上の文は <a class="reference external" href="html/example.html">このページ</a> のように表示されるはずです。</p>
+<p>デザインのセンスが全く感じられないでしょう。
+普段見ている Web ページでは、文章が左端に固まっていないし、もう少し行間も適切です。
+色もついてますね。</p>
+<p>HTML は Web ページのデザインを担当していません。
+この役割を担っているのは、CSS (Cascading Style Sheets) と呼ばれるものです。
+HTML 文書内で CSS を使う場合、<code class="docutils literal notranslate"><span class="pre">style</span></code> 要素を用います。
+HTML のどの要素の内容を装飾するかを <strong>セレクタ</strong> というもので指定します。
+Web スクレイピングをする際にも、この <strong>セレクタ</strong> を用いて、取ってくる内容を指定します。
+セレクタの後の <code class="docutils literal notranslate"><span class="pre">{}</span></code> で装飾内容を指定します。
+例えば、 以下の例は <code class="docutils literal notranslate"><span class="pre">h1</span></code> 要素の内容を赤色に変更しています。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="nt">h1</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<style>
+  #h1{color:rgb(255,0,0)}
+</style>
+<h1 id="h1">HTML</h1><div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>この例では CSS の内容を html 文書内に書いてますが、普通は CSS の内容を別ファイルに css として保存し、head 内で読み込みます。
+こうすることで、他のページでも使いまわすことができます。</p>
+</div>
+<div class="section" id="id-class">
+<h2>id, class<a class="headerlink" href="#id-class" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>先の例では要素を指定すればうまくいきました。
+それでは、次の例はどうでしょうか。ここでは、果物（リンゴ、バナナ、スイカ）のみの色を変えたいとします。
+しかし、先ほどのように、<code class="docutils literal notranslate"><span class="pre">p</span></code> 要素を指定してしまうと、牛肉の色も変わってしまいます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="nt">p</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="mh">#ff00ff</span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>リンゴ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>バナナ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>牛肉<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>スイカ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<style>
+  .pp{color:#008080}
+</style>
+<p class="pp">リンゴ</p>
+<p class="pp">バナナ</p>
+<p class="pp">牛肉</p>
+<p class="pp">スイカ</p><p>こうした場合、あらかじめ HTML で果物のグループを作成しておけば、この問題は解決します。
+<code class="docutils literal notranslate"><span class="pre">class=&quot;クラス名&quot;</span></code> をタグ内に記入することによって、グループを作成します。
+リンゴ、バナナ、スイカのタグ内に、fruits というクラス名を付けましょう。</p>
+<p>CSS で <code class="docutils literal notranslate"><span class="pre">class</span></code> を指定する場合、セレクタは <code class="docutils literal notranslate"><span class="pre">.クラス名</span></code> とします。
+この例の場合は、<code class="docutils literal notranslate"><span class="pre">.fruits</span></code> です。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">.</span><span class="nc">fruits</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="mh">#008080</span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span><span class="p">&gt;</span>リンゴ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span><span class="p">&gt;</span>バナナ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>牛肉<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span><span class="p">&gt;</span>スイカ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<style>
+  .fruits{color:#008080}
+</style>
+<p class="fruits">リンゴ</p>
+<p class="fruits">バナナ</p>
+<p>牛肉</p>
+<p class="fruits">スイカ</p><p>上手くいきました！
+さて、次にリンゴのみを赤にしたい場合はどうでしょうか。
+ここでは <code class="docutils literal notranslate"><span class="pre">id</span></code> を使ってみましょう。
+<code class="docutils literal notranslate"><span class="pre">id=&quot;id名&quot;</span></code> をタグ内に記入することによって、要素に id 名を割り振ることができます。
+リンゴのタグ内に apple という id 名を付けてみましょう。</p>
+<p>CSS で <code class="docutils literal notranslate"><span class="pre">id</span></code> を指定する場合、セレクタは <code class="docutils literal notranslate"><span class="pre">#id名</span></code> とします。この例の場合は、<code class="docutils literal notranslate"><span class="pre">#apple</span></code> です。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">class</span></code> と <code class="docutils literal notranslate"><span class="pre">id</span></code> はどちらも要素に名前を付けることは一緒ですが、違うところもあります。
+<code class="docutils literal notranslate"><span class="pre">class</span></code> は複数の要素に同じクラス名を使えますが、<code class="docutils literal notranslate"><span class="pre">id</span></code> は複数の要素が同じ id を持つことはできません。
+また、CSS で <code class="docutils literal notranslate"><span class="pre">class</span></code> と <code class="docutils literal notranslate"><span class="pre">id</span></code> で同じ要素を指定した場合、<code class="docutils literal notranslate"><span class="pre">id</span></code> で指定した内容が実行されます。</p>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">.</span><span class="nc">fruits</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="mh">#008080</span><span class="p">}</span>
+  <span class="p">#</span><span class="nn">id</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;apple&quot;</span><span class="p">&gt;</span>リンゴ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span><span class="p">&gt;</span>バナナ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>牛肉<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fruits&quot;</span><span class="p">&gt;</span>スイカ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<style>
+  .fruits{color:#008080}
+  #apple{color:rgb(255,0,0)}
+</style>
+<p class="fruits" id="apple">リンゴ</p>
+<p class="fruits">バナナ</p>
+<p>牛肉</p>
+<p class="fruits">スイカ</p><p>セレクタをうまく使えば、思い通りに要素を指定することができます。基本的なセレクタの使い方をみてみましょう。</p>
+</div>
+<div class="section" id="id13">
+<h2>結合子<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>結合子を使うことによって、要素の子孫、兄弟関係にある要素を指定できます。</p>
+<div class="section" id="e-f">
+<h3>E F<a class="headerlink" href="#e-f" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>E 要素の子孫の全ての F 要素</p>
+<p>次の例は、<code class="docutils literal notranslate"><span class="pre">span</span></code> 要素の子孫の <code class="docutils literal notranslate"><span class="pre">p</span></code> 要素を指定しています。
+一方、<code class="docutils literal notranslate"><span class="pre">span</span></code> 要素の子孫ではない <code class="docutils literal notranslate"><span class="pre">p</span></code> 要素、 <code class="docutils literal notranslate"><span class="pre">span</span></code> 要素の子孫の <code class="docutils literal notranslate"><span class="pre">span</span></code> 要素は指定されません。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="nt">span</span> <span class="nt">p</span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="mh">#008080</span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>果物
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>リンゴ<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>メロン<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>みかん<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>牛肉<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<style>
+  span p{color:#008080}
+</style>
+<span>果物
+  <p>リンゴ</p>
+  <p>メロン</p>
+  <span>みかん</span>
+</span>
+<p>牛肉</p><p>まだまだ説明できていない様々なセレクタがあります。
+<a class="reference external" href="http://www.htmq.com/csskihon/005.shtml">HTML クイックリファレンス</a> はセレクタを網羅しているので、参照してみるとよいでしょう。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../notebooks/DataAnalysis.html" class="btn btn-neutral float-left" title="Python を使ったデータ分析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Takahiro Miura
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python 事始め &mdash; Python Tutorial 1.00 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Python チュートリアル" href="../notebooks/Tutorial.html" />
+    <link rel="prev" title="Python による Web スクレイピングにようこそ！" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 事始め</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Pythonとは？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-r">Python と R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Python のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Python の起動</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">パッケージのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ipython">IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jupyter-notebook">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Tutorial.html">Python チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/DataAnalysis.html">Python を使ったデータ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webサイトの構成要素.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webサイトの構成要素.html#css">CSS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tutorial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Python 事始め</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/Python事始め.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="python">
+<h1>Python 事始め<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>Pythonとは？<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すでに Python という言葉はどこかで聞いたことがあると思います。
+Python は C や Fortran といったプログラミング言語の１つです。
+Python は ABC という学習用プログラムからヒントを得て開発されました。
+Python はプログラミング言語の中でも学習が容易で、またコーディングの容易さ、可読性にも優れています。
+そうした理由から、Python は大学の授業でも多く使われています。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ちなみに、Python のシンボルは、ニシキヘビですが、これが名前の由来ではありません。
+イギリスのコメディ番組「空飛ぶモンティ・パイソン」が由来です。
+プログラミングの書籍などを多く出版している O'Reilly の書籍の表紙には動物が描かれていることがほとんどですが、
+そこで Python の書籍を出す際、ニシキヘビをシンボルにしたそうです。</p>
+</div>
+</div>
+<div class="section" id="python-r">
+<h2>Python と R<a class="headerlink" href="#python-r" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エコノメトリクスでよく用いられるプログラミング言語としては、R が有名かと思います。
+R は技術計算用の言語で、S というプログラミング言語をもとに作られました。
+R と Python のどちらを使うかはよく議論の対象になっています。
+私見では、データ分析に関していうと、Python と R のどちらを使ってもよいと思います。
+というのも、Python で開発された便利な機能は誰かが R で使えるようにしており、またその逆も多くあるため、これら２つは互いに良い影響を与え合っています。</p>
+<p>ただし、Python と R で違いを挙げるとすれば、次のようになります。</p>
+<ul class="simple">
+<li><p>Python の開発は <strong>機械学習</strong> 、特に Deep Learning、 方面に秀でています。</p></li>
+</ul>
+<p>例えば、機械学習・Deep Learning 用のパッケージとして、<a class="reference external" href="https://www.tensorflow.org/">Tensorflow</a>, <a class="reference external" href="https://chainer.org/">Chariner</a> などがあります。
+最新の Deep Learning パッケージは、まず Python のパッケージとして出されることが多いです。</p>
+<ul class="simple">
+<li><p>R の開発は <strong>統計学</strong> 方面に秀でています。</p></li>
+</ul>
+<p>最先端の論文で提唱されている統計手法の多くは R で開発されています。</p>
+</div>
+<div class="section" id="id2">
+<h2>Python のインストール<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データ分析用に Python を使う場合、<a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a> の Python ディストリビューションからインストールするとよいでしょう。
+Python でデータ分析をする場合は、様々なパッケージを用いるため、Anaconda からインストールすれば、自分でわざわざパッケージをインストールする必要はありません。
+現在、Python にはバージョン 2 と 3 があります。
+このサイトでは、Python 3 を使うため、そちらをインストールして下さい。</p>
+</div>
+<div class="section" id="id3">
+<h2>Python の起動<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Python をインストールしたら、Python を起動しましょう。
+コマンドプロンプト( Windows ) / ターミナル( Mac )を立ち上げ、 <code class="docutils literal notranslate"><span class="pre">python</span></code> と打ってみましょう。
+次のような結果が表示されるはずです。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:25:24) [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>立ち上がらない場合、パスの設定ができていないと思われます。</p>
+<p>システムのプロパティ　→　システム情報　→　設定の変更　→　詳細設定　→　環境変数　→　システムの環境変数の Path　→　新規　をクリックします。
+以下の文字列をそれぞれ追加します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Users\ユーザー名\Anaconda3””
+C:\Users\ユーザー名\Anaconda3\Scripts
+C:\Users\ユーザー名\Anaconda3\Library\bin
+</pre></div>
+</div>
+<p>ユーザー名は、自分のユーザー名（例：hoge）に置き換えてください。
+Windows 10 以前の場合、Path はセミコロン <code class="docutils literal notranslate"><span class="pre">;</span></code> で区切ります。</p>
+<p>Python を終了する場合は、 <code class="docutils literal notranslate"><span class="pre">quit()</span></code> と打ちます。</p>
+</div>
+<div class="section" id="id4">
+<h2>パッケージのインストール<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Python では、様々な人たちが Python に便利なパッケージ( R でいう library, Stata でいう ado ファイル )を開発しています。
+このパッケージをインストールするのに便利なコマンド <code class="docutils literal notranslate"><span class="pre">pip</span></code> が用意されています。
+Web スクレイピングに便利なパッケージである、<a class="reference external" href="http://docs.python-requests.org/en/master/#">requests</a> をインストールしてみましょう。
+コマンドプロンプトに次のコマンドを打ちます。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install requests
+</pre></div>
+</div>
+<p>また、Anaconda から Python をインストールした場合には、 <code class="docutils literal notranslate"><span class="pre">conda</span></code> が用意されています。
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> を用いてパッケージをインストールする場合は、次のようになります。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install requests
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip,</span> <span class="pre">conda</span></code> を使う場合、Python を一旦閉じるか、別のコマンドプロンプトから行ってください。
+また、 <code class="docutils literal notranslate"><span class="pre">conda</span></code> を使える場合は、まずこちらを使った方がよいでしょう。</p>
+</div>
+</div>
+<div class="section" id="ipython">
+<h2>IPython<a class="headerlink" href="#ipython" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データの整理、分析は多くの場合、試行錯誤の連続です。
+このようなデータ分析の過程をスムーズに進めるためにに、Python をよりデータ分析に使いやすくした IPython というものが開発されています。
+コマンドプロンプトに <code class="docutils literal notranslate"><span class="pre">ipython</span></code> と打ってみましょう。次のような画面が表示されるはずです。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:25:24) [MSC v.1900 64 bit (AMD64)]
+Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+
+IPython 5.3.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython&#39;s features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python&#39;s own help system.
+object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra details.
+
+In [1]:
+</pre></div>
+</div>
+</div>
+<div class="section" id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>長いコードを書く場合、コマンドプロンプト上で行うのは面倒でしょう。
+その場合には、統合開発環境( IDE )を使うとよいでしょう。
+Jupyter Notebook は IDE の１つで、技術計算用ソフトウェア <a class="reference external" href="http://www.wolfram.com/mathematica/?source=nav">Mathematica</a> ライクな開発環境を提供します。
+Jupyter Notebook の起動は、Jupyter Notebook というアプリを起動するか、コマンドプロンプトに　<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> と打ちます。</p>
+<p>次のような画面がブラウザに表示されますので、適当なフォルダで New → Python 3 を押すと、Notebook が新規に作られます。</p>
+<img alt="../_images/jupyter_console.png" src="../_images/jupyter_console.png" />
+<p>Jupyter Notebook は次のようなものです。</p>
+<img alt="../_images/Jupyter_Notebook.png" src="../_images/Jupyter_Notebook.png" />
+<p>画面一番上の Untitle のところをクリックして、Notebook の名前を付けましょう。
+<code class="docutils literal notranslate"><span class="pre">In[]</span></code> の中にコードを書いていきます。
+<code class="docutils literal notranslate"><span class="pre">In[]</span></code> の中をセルと呼びます。
+<em class="fa fa-step-forward"></em> をクリックするか、または <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> を打つと、セル内のコードが実行されます。</p>
+<p>さて、これで準備は整いました！
+次から Jupyter Notebook を用いて Python について学んでいきましょう。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../notebooks/Tutorial.html" class="btn btn-neutral float-right" title="Python チュートリアル" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Python による Web スクレイピングにようこそ！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Takahiro Miura
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

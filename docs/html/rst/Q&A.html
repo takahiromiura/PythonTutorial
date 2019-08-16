@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Q &amp; A &mdash; Python Tutorial 1.00 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Python事始め.html">Python 事始め</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Tutorial.html">Python チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/DataAnalysis.html">Python を使ったデータ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webサイトの構成要素.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webサイトの構成要素.html#css">CSS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tutorial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Q &amp; A</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/Q&amp;A.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="q-a">
+<h1>Q &amp; A<a class="headerlink" href="#q-a" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>講習会の内容でリクエストがあったのですが、上手いこと内容に入れられなかったのでざっくりと記載しておきます。</p>
+<ul class="simple">
+<li><p>Q1: Pythonスクリプトを実行した時に、表示されるメッセージを、ログファイルに残す</p></li>
+<li><p>A1: Python には Logging の機能が実装されており、様々な条件が起こった時にログを残すことができます。例えば、Error とか Info とかです。詳しくは <a class="reference external" href="http://www.sejuku.net/blog/23149">このサイト</a> を参照してください。</p></li>
+<li><p>Q2:ウェブサイトから圧縮ファイルをダウンロードし（ログインが必要な場合は、ログイン名とパスワード入力をスクリプトが実行されている途中で入力）、圧縮方式に合わせて解凍したい</p></li>
+<li><p>A2(認証): Basic 認証のログインは requests モジュールにオプションを加えることによって可能です（ <a class="reference external" href="http://requests-docs-ja.readthedocs.io/en/latest/user/authentication/">該当ページ</a> ）。 JavaScript を使う場合は、Selenium で行ってください。</p></li>
+<li><p>A2(ダウンロード): ファイルのダウンロードは Beautifulsoup と　requests を組み合わせると可能です（ <a class="reference external" href="http://qiita.com/checkpoint/items/d9bcc63292d7f01c62d3">該当ページ</a> ）。</p></li>
+<li><p>A2(解凍): ファイルの圧縮は拡張子を調べて、拡張子に合わせて解凍をすればよいと思います。Python には zip ファイルを解凍するモジュールがあります。また、<code class="docutils literal notranslate"><span class="pre">rarfile</span></code> というモジュールを使うと、rar ファイルも解凍できます（ <a class="reference external" href="http://symfoware.blog68.fc2.com/blog-entry-908.html">該当ページ</a> )。</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Takahiro Miura
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
