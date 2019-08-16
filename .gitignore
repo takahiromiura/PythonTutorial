@@ -1,0 +1,11 @@
+temp
+.vscode
+.ipynb_checkpoints
+.DS_Store
+*.pyc
+*.pickle
+docs/doctrees
+*.buildinfo
+*.inv
+*.exe
+docs/html/_sources
