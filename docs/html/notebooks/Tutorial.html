@@ -413,10 +413,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Python-チュートリアル">
 <h1>Python チュートリアル<a class="headerlink" href="#Python-チュートリアル" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>実行するとエラーになるものは、<code class="docutils literal notranslate"><span class="pre">#</span></code> でコメントアウトしています。</p>
-<p>実行するときは、<code class="docutils literal notranslate"><span class="pre">#</span></code> を外してください。</p>
-<p>ここでは、Python の基本的な文法などを見ていきます。</p>
-<p>まずは、お馴染みの。</p>
+<p>実行するとエラーになるものは、<code class="docutils literal notranslate"><span class="pre">#</span></code> でコメントアウトしています。 実行するときは、<code class="docutils literal notranslate"><span class="pre">#</span></code> を外してください。 ここでは、Python の基本的な文法などを見ていきます。 まずは、お馴染みの。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -434,20 +431,11 @@ div.rendered_html tbody tr:hover {
 Hello World!
 </pre></div></div>
 </div>
-<p>実はこの 1 行に Python のエッセンスが詰まっています。</p>
-<p>C などの言語では、先程の文を出すには 3 行ほど必要なのですが、その時にいろいろな <strong>おまじない</strong> を書かなければいけません。</p>
-<p>Python では、こうしたおまじないを極力書かないで済むので、自分がどういった操作をしているかが分かりやすく、学習が容易になるのです。</p>
-<p>Python を起動すると、<strong>組み込み型</strong>という基本的な型が使えます。</p>
-<p>型ごとに持っている機能が異なります。</p>
-<p>例えば、整数を扱うための型、文字列を扱うための型、その他にも様々な型があります。</p>
-<p>また、整数型、文字列型、関数などを全てを総称して <code class="docutils literal notranslate"><span class="pre">オブジェクト</span></code> といいます。</p>
-<p>まずは、<strong>組み込み型</strong> を学んで、Python に慣れていきましょう。</p>
+<p>実はこの 1 行に Python のエッセンスが詰まっています。 C などの言語では、先程の文を出すには 3 行ほど必要なのですが、その時にいろいろな <strong>おまじない</strong> を書かなければいけません。 Python では、こうしたおまじないを極力書かないで済むので、自分がどういった操作をしているかが分かりやすく、学習が容易になるのです。 Python を起動すると、<strong>組み込み型</strong>という基本的な型が使えます。 型ごとに持っている機能が異なります。 例えば、整数を扱うための型、文字列を扱うための型、その他にも様々な型があります。
+また、整数型、文字列型、関数などを全てを総称して <code class="docutils literal notranslate"><span class="pre">オブジェクト</span></code> といいます。 まずは、<strong>組み込み型</strong> を学んで、Python に慣れていきましょう。</p>
 <div class="section" id="変数">
 <h2>変数<a class="headerlink" href="#変数" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>さて、組み込み型を説明する前に、変数について説明しましょう。</p>
-<p>変数には数字や文字などを格納することができます。</p>
-<p>例えば、 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">apple</span> <span class="pre">=</span> <span class="pre">100</span></code> とすれば、 <code class="docutils literal notranslate"><span class="pre">apple</span></code> に 100 という値が格納されます。</p>
-<p>数字を変数名の最初にすることは許されていません。</p>
+<p>さて、組み込み型を説明する前に、変数について説明しましょう。 変数には数字や文字などを格納することができます。 例えば、 <code class="docutils literal notranslate"><span class="pre">apple</span> <span class="pre">=</span> <span class="pre">100</span></code> とすれば、 <code class="docutils literal notranslate"><span class="pre">apple</span></code> に 100 という値が格納されます。 数字を変数名の最初にすることは許されていません。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -476,8 +464,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>何も格納していない変数を参照した場合は、エラーが返ってきます。</p>
-<p>例えば、次を実行すると、<code class="docutils literal notranslate"><span class="pre">NameError</span></code> が返ってきます。 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">orange</span></code></p>
+<p>何も格納していない変数を参照した場合は、エラーが返ってきます。 例えば、次を実行すると、<code class="docutils literal notranslate"><span class="pre">NameError</span></code> が返ってきます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -491,10 +478,7 @@ Hello World!
 </div>
 <div class="section" id="エラー">
 <h2>エラー<a class="headerlink" href="#エラー" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>プログラミングをしていく中で、エラーは必ず起こります。</p>
-<p>ですが、エラーが出たからといって、気落ちしないでください。</p>
-<p>エラーが起きたら、エラーの内容をよく読んでみましょう。 例えば、先の場合は、 <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'orange'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> という内容です。これは、<code class="docutils literal notranslate"><span class="pre">orange</span></code> という変数はまだ定義されていませんということです。</p>
-<p>それでは、次に <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">orange</span> <span class="pre">=</span> <span class="pre">150</span></code> と打ってみてから、<code class="docutils literal notranslate"><span class="pre">orange</span></code>を参照してみましょう。今度はエラーが出ないはずです。</p>
+<p>プログラミングをしていく中で、エラーは必ず起こります。 ですが、エラーが出たからといって、気落ちしないでください。 エラーが起きたら、エラーの内容をよく読んでみましょう。 例えば、先の場合は、<code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'orange'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> という内容です。 これは、<code class="docutils literal notranslate"><span class="pre">orange</span></code> という変数はまだ定義されていませんということです。 それでは、次に <code class="docutils literal notranslate"><span class="pre">orange</span> <span class="pre">=</span> <span class="pre">150</span></code> と打ってみてから、<code class="docutils literal notranslate"><span class="pre">orange</span></code>を参照してみましょう。今度はエラーが出ないはずです。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -514,21 +498,14 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>エラーの内容を読んでもよくわからなかった場合、エラーの内容をコピーして、ググりましょう。</p>
-<p>プログラミングに関する Q &amp; A ウェブサイトとして、<a class="reference external" href="https://stackoverflow.com/">stack overflow</a> が有名です。</p>
-<p>ほとんどの場合、こちらを参照すれば同じような問題を抱えた人がいて、それに対する答えも提供されていることでしょう（基本的に英語です）。</p>
-<p>また、 <a class="reference external" href="https://teratail.com/">teratail</a> という日本のサイトもあります。</p>
-<p>調べても答えが得られなかった場合は、上記の2つで質問してみるのもよいでしょう。</p>
-<p>他にも、モジュールの使い方がいまいちわからない場合、 <a class="reference external" href="http://qiita.com/">Qiita</a> で検索してみましょう。</p>
-<p>そのモジュールを使用した記事があるかもしれません。</p>
+<p>エラーの内容を読んでもよくわからなかった場合、エラーの内容をコピーして、ググりましょう。 プログラミングに関する Q &amp; A ウェブサイトとして、<a class="reference external" href="https://stackoverflow.com/">stack overflow</a> が有名です。 ほとんどの場合、こちらを参照すれば同じような問題を抱えた人がいて、それに対する答えも提供されていることでしょう（基本的に英語です）。 また、 <a class="reference external" href="https://teratail.com/">teratail</a> という日本のサイトもあります。 調べても答えが得られなかった場合は、上記の2つで質問してみるのもよいでしょう。
+他にも、モジュールの使い方がいまいちわからない場合、 <a class="reference external" href="http://qiita.com/">Qiita</a> で検索してみましょう。 そのモジュールを使用した記事があるかもしれません。</p>
 </div>
 <div class="section" id="基本的な型">
 <h2>基本的な型<a class="headerlink" href="#基本的な型" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="int-(整数）型">
 <h3>int (整数）型<a class="headerlink" href="#int-(整数）型" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>整数型は値に整数を持ちます。</p>
-<p>あまり説明する必要はないかもしれません。</p>
-<p>次の例は整数型です。</p>
+<p>整数型は値に整数を持ちます。 あまり説明する必要はないかもしれません。 次の例は整数型です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -550,9 +527,7 @@ Hello World!
 </div>
 <div class="section" id="float-(小数点)-型">
 <h3>float (小数点) 型<a class="headerlink" href="#float-(小数点)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>小数点型は値に小数点を持ちます。</p>
-<p>整数の後に <code class="docutils literal notranslate"><span class="pre">.</span></code> をつけることで小数点型になります。</p>
-<p>次の例は小数点型です。</p>
+<p>小数点型は値に小数点を持ちます。 整数の後に <code class="docutils literal notranslate"><span class="pre">.</span></code> をつけることで小数点型になります。 次の例は小数点型です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -694,9 +669,7 @@ Hello World!
 </div>
 <div class="section" id="str-(文字列)-型">
 <h3>str (文字列) 型<a class="headerlink" href="#str-(文字列)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>文字列型は値に文字列を持ちます。</p>
-<p>文字列の前後を シングルクォート ` かダブルクォート 」 で囲みます。</p>
-<p>次の例は文字列型です。</p>
+<p>文字列型は値に文字列を持ちます。 文字列の前後を シングルクォート ` かダブルクォート 」 で囲みます。 次の例は文字列型です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -715,8 +688,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>文字列は足すことができます。</p>
-<p>しかし、引くことはできません。</p>
+<p>文字列は足すことができます。 しかし、引くことはできません。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -748,8 +720,7 @@ Hello World!
 </div>
 <div class="section" id="list-(リスト)">
 <h3>list (リスト)<a class="headerlink" href="#list-(リスト)" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>リストは複数の値を持つことができます。リストを作るには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を使います。</p>
-<p>複数の要素を持つリストを作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
+<p>リストは複数の値を持つことができます。リストを作るには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を使います。 複数の要素を持つリストを作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -806,9 +777,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>リストの各要素を参照するには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を用い、かぎかっこの中に参照したい要素の番号（インデックス）を入れます。</p>
-<p>R とは違い、 Python では、要素の番号は 0 から始まります（ R では 1 から）。</p>
-<p>リストにない番号を参照するとエラーが返ってきます。</p>
+<p>リストの各要素を参照するには、かぎかっこ <code class="docutils literal notranslate"><span class="pre">[]</span></code> を用い、かぎかっこの中に参照したい要素の番号（インデックス）を入れます。 R とは違い、 Python では、要素の番号は 0 から始まります（ R では 1 から）。 リストにない番号を参照するとエラーが返ってきます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -878,8 +847,7 @@ Hello World!
 </div>
 <div class="section" id="dict-(辞書)-型">
 <h3>dict (辞書) 型<a class="headerlink" href="#dict-(辞書)-型" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>辞書は、キーと値をセットで使います。辞書を作るには、なみかっこ <code class="docutils literal notranslate"><span class="pre">{}</span></code> を使います。</p>
-<p><code class="docutils literal notranslate"><span class="pre">{キー：値}</span></code> という順番で各要素を作成します。複数のキーと値を持つ辞書を作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
+<p>辞書は、キーと値をセットで使います。辞書を作るには、なみかっこ <code class="docutils literal notranslate"><span class="pre">{}</span></code> を使います。 <code class="docutils literal notranslate"><span class="pre">{キー：値}</span></code> という順番で各要素を作成します。 複数のキーと値を持つ辞書を作る場合は、各要素を <code class="docutils literal notranslate"><span class="pre">,</span></code> で分けます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
@@ -898,9 +866,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>辞書の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[]</span></code> を用います。</p>
-<p><code class="docutils literal notranslate"><span class="pre">[]</span></code> の中にキーとなる値を入れると、そのキーに対応する値が返ってきます。</p>
-<p>キー以外の値を参照しようとすると、エラーが返ってきます。</p>
+<p>辞書の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[]</span></code> を用います。 <code class="docutils literal notranslate"><span class="pre">[]</span></code> の中にキーとなる値を入れると、そのキーに対応する値が返ってきます。 キー以外の値を参照しようとすると、エラーが返ってきます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
@@ -971,9 +937,7 @@ Hello World!
 </div>
 <div class="section" id="tuple-(タプル)">
 <h3>tuple (タプル)<a class="headerlink" href="#tuple-(タプル)" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>タプルはリストと同じように複数の要素を持つことができます。また、各要素の参照もリストと同じです。</p>
-<p>しかし、リストと違うのは、要素の追加、削除、編集ができないということです。</p>
-<p>意図せず値を書き換えてしまうことを防ぎたい場合は、タプルを使うとよいでしょう。</p>
+<p>タプルはリストと同じように複数の要素を持つことができます。 また、各要素の参照もリストと同じです。 しかし、リストと違うのは、要素の追加、削除、編集ができないということです。 意図せず値を書き換えてしまうことを防ぎたい場合は、タプルを使うとよいでしょう。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
@@ -1025,9 +989,7 @@ Hello World!
 </div>
 <div class="section" id="スライス">
 <h3>スライス<a class="headerlink" href="#スライス" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>リスト、タプルなどで、複数の要素を参照したい場合は、<em>スライス</em> を使います。</p>
-<p>i 番目の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[i]</span></code> でしたが、 <code class="docutils literal notranslate"><span class="pre">[i:j]</span></code> とすると、i 番目から j - 1 番目までの要素を参照します。</p>
-<p>以下はリストの参照の例です。</p>
+<p>リスト、タプルなどで、複数の要素を参照したい場合は、<em>スライス</em> を使います。 i 番目の要素を参照するには、<code class="docutils literal notranslate"><span class="pre">[i]</span></code> でしたが、 <code class="docutils literal notranslate"><span class="pre">[i:j]</span></code> とすると、i 番目から j - 1 番目までの要素を参照します。 以下はリストの参照の例です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
@@ -1126,9 +1088,9 @@ Hello World!
 </div>
 <div class="section" id="メソッド-(Method)">
 <h2>メソッド (Method)<a class="headerlink" href="#メソッド-(Method)" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>オブジェクトには、固有の関数が用意されています。これをメソッドといいます。</p>
-<p>文字列型には例えば、次のようなメソッドが用意されています。 <code class="docutils literal notranslate"><span class="pre">lower:</span> <span class="pre">文字列を小文字にする</span>&#160; <span class="pre">upper:</span> <span class="pre">文字列を大文字にする</span>&#160; <span class="pre">split:</span> <span class="pre">文字列を指定した境界にしたがって、分割し、リストを作る</span></code></p>
-<p>リスト型には例えば、次のようなメソッドが用意されています。 <code class="docutils literal notranslate"><span class="pre">append:</span> <span class="pre">リストに要素を追加する</span>&#160; <span class="pre">extend:</span> <span class="pre">リストにリストを追加する</span>&#160; <span class="pre">remove:</span> <span class="pre">指定した値をリストから除外する</span></code> メソッドを使うには、型を作成し、<code class="docutils literal notranslate"><span class="pre">オブジェクト.メソッド(引数)</span></code> とします。例を見てみましょう。</p>
+<p>オブジェクトには、固有の関数が用意されています。これをメソッドといいます。 文字列型には例えば、次のようなメソッドが用意されています。 * <code class="docutils literal notranslate"><span class="pre">lower</span></code>: 文字列を小文字にする * <code class="docutils literal notranslate"><span class="pre">upper</span></code>: 文字列を大文字にする * <code class="docutils literal notranslate"><span class="pre">split</span></code>: 文字列を指定した境界にしたがって、分割し、リストを作る</p>
+<p>リスト型には例えば、次のようなメソッドが用意されています。 * <code class="docutils literal notranslate"><span class="pre">append</span></code>: リストに要素を追加する * <code class="docutils literal notranslate"><span class="pre">extend</span></code>: リストにリストを追加する * <code class="docutils literal notranslate"><span class="pre">remove</span></code>: 指定した値をリストから除外する</p>
+<p>メソッドを使うには、型を作成し、<code class="docutils literal notranslate"><span class="pre">オブジェクト.メソッド(引数)</span></code> とします。例を見てみましょう。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
@@ -1263,11 +1225,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>メソッドには破壊的メソッドと非破壊的メソッドがあります。</p>
-<p>破壊的メソッドは、メソッドを呼び出したオブジェクトの値そのものを変更します。</p>
-<p>一方、非破壊的メソッドは、新たなオブジェクトを返します。</p>
-<p>例えば、<code class="docutils literal notranslate"><span class="pre">lower</span></code>, <code class="docutils literal notranslate"><span class="pre">upper</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> は非破壊的メソッド、　<code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code> は破壊的メソッドです。</p>
-<p>引数が必要でない場合も、<code class="docutils literal notranslate"><span class="pre">()</span></code> を忘れると、関数の戻り値ではなく関数自体が返ってきますので注意してください。</p>
+<p>メソッドには破壊的メソッドと非破壊的メソッドがあります。 破壊的メソッドは、メソッドを呼び出したオブジェクトの値そのものを変更します。 一方、非破壊的メソッドは、新たなオブジェクトを返します。 例えば、<code class="docutils literal notranslate"><span class="pre">lower</span></code>, <code class="docutils literal notranslate"><span class="pre">upper</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> は非破壊的メソッド、<code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code> は破壊的メソッドです。 引数が必要でない場合も、<code class="docutils literal notranslate"><span class="pre">()</span></code> を忘れると、関数の戻り値ではなく関数自体が返ってきますので注意してください。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
@@ -1286,19 +1244,14 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p>これまでに、いくつかの基本的な型を説明してきました。</p>
-<p>各オブジェクトには様々な特徴があり、またそれぞれ固有の関数（メソッド）を持っています。</p>
-<p>くぎを打つ場合には金づちを使い、木を切る場合にはのこぎりを使います。</p>
-<p>同じように、使用目的によって、型を使い分けることが重要です。</p>
+<p>これまでに、いくつかの基本的な型を説明してきました。 各オブジェクトには様々な特徴があり、またそれぞれ固有の関数（メソッド）を持っています。 くぎを打つ場合には金づちを使い、木を切る場合にはのこぎりを使います。 同じように、使用目的によって、型を使い分けることが重要です。</p>
 </div>
 <div class="section" id="ループ文">
 <h2>ループ文<a class="headerlink" href="#ループ文" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>似たような操作を繰り返したい場合、例えば、1 から 10 までの整数を順に出力したい場合などには、ループ文を使うとよいでしょう。</p>
-<p>Python では、 <code class="docutils literal notranslate"><span class="pre">for,</span> <span class="pre">while</span></code> がよく用いられます。1 つずつその性質を見ていきましょう。</p>
+<p>似たような操作を繰り返したい場合、例えば、1 から 10 までの整数を順に出力したい場合などには、ループ文を使うとよいでしょう。 Python では、 <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> がよく用いられます。1 つずつその性質を見ていきましょう。</p>
 <div class="section" id="for">
 <h3>for<a class="headerlink" href="#for" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>for は、リストやタプルなどからその中の要素を逐次的に引き出す場合に使われます。</p>
-<p>例えば、次のようにします。</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> は、リストやタプルなどからその中の要素を逐次的に引き出す場合に使われます。 例えば、次のようにします。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
@@ -1320,11 +1273,7 @@ Hello World!
 3
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">print</span></code> はその名の通り、<code class="docutils literal notranslate"><span class="pre">()</span></code> 内の値を出力したい場合に用いる関数です。</p>
-<p>上の文では、<code class="docutils literal notranslate"><span class="pre">i</span></code> にリスト <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> の各要素が順に代入されていきます。</p>
-<p>Python では、他のプログラミング言語と違い、<strong>インデント（字下げ）</strong> が意味を持ちます。</p>
-<p>ループや、関数、クラスの定義の際には、直下のインデントした文がループ文、関数、クラスの定義の文になります。</p>
-<p>詳しく見てみましょう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> はその名の通り、<code class="docutils literal notranslate"><span class="pre">()</span></code> 内の値を出力したい場合に用いる関数です。 上の文では、<code class="docutils literal notranslate"><span class="pre">i</span></code> にリスト <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> の各要素が順に代入されていきます。 Python では、他のプログラミング言語と違い、<strong>インデント（字下げ）</strong> が意味を持ちます。 ループや、関数、クラスの定義の際には、直下のインデントした文がループ文、関数、クラスの定義の文になります。 詳しく見てみましょう。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
@@ -1351,10 +1300,7 @@ Hello World!
 4
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">+=</span> <span class="pre">1</span></code> は、<code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">i</span></code> と同じです。</p>
-<p>インデントしている文はループが実行されていますが、その下のインデントがされていない文はループが実行されていません。</p>
-<p>したがって、<code class="docutils literal notranslate"><span class="pre">j</span></code> は <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> の値が格納されますが、<code class="docutils literal notranslate"><span class="pre">k</span></code> はループの最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> がとる値、<code class="docutils literal notranslate"><span class="pre">4</span></code> のみが格納されます。</p>
-<p>また、特に理由のないインデントは、エラーになります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">+=</span> <span class="pre">1</span></code> は、<code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">i</span></code> と同じです。 インデントしている文はループが実行されていますが、その下のインデントがされていない文はループが実行されていません。 したがって、<code class="docutils literal notranslate"><span class="pre">j</span></code> は <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> の値が格納されますが、<code class="docutils literal notranslate"><span class="pre">k</span></code> はループの最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> がとる値、<code class="docutils literal notranslate"><span class="pre">4</span></code> のみが格納されます。 また、特に理由のないインデントは、エラーになります。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
@@ -1378,9 +1324,7 @@ Hello World!
 </pre></div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> は <code class="docutils literal notranslate"><span class="pre">range</span></code> 型を使って、 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">4)</span></code> でも実行できます。</p>
-<p><code class="docutils literal notranslate"><span class="pre">range</span></code> 型は <code class="docutils literal notranslate"><span class="pre">range(b)</span></code> とした場合、<code class="docutils literal notranslate"><span class="pre">0</span></code> から <code class="docutils literal notranslate"><span class="pre">b-1</span></code> までの値を順に返します。</p>
-<p><code class="docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b)</span></code> のときは、<code class="docutils literal notranslate"><span class="pre">a</span></code> から <code class="docutils literal notranslate"><span class="pre">b-1</span></code> までです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> は <code class="docutils literal notranslate"><span class="pre">range</span></code> 型を使って、 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">4)</span></code> でも実行できます。 <code class="docutils literal notranslate"><span class="pre">range</span></code> 型は <code class="docutils literal notranslate"><span class="pre">range(b)</span></code> とした場合、<code class="docutils literal notranslate"><span class="pre">0</span></code> から <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-</span> <span class="pre">1</span></code> までの値を順に返します。 <code class="docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b)</span></code> のときは、<code class="docutils literal notranslate"><span class="pre">a</span></code> から <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-</span> <span class="pre">1</span></code> までです。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
@@ -1427,8 +1371,7 @@ Hello World!
 </div>
 <div class="section" id="while">
 <h3>while<a class="headerlink" href="#while" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> は指定した条件式が真の場合にループ文を実行し、条件式が偽になるとループをやめます。</p>
-<p>例えば、次のようにします。</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> は指定した条件式が真の場合にループ文を実行し、条件式が偽になるとループをやめます。 例えば、次のようにします。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
@@ -1454,17 +1397,16 @@ Hello World!
 4
 </pre></div></div>
 </div>
-<p>上の文は <code class="docutils literal notranslate"><span class="pre">i</span></code> が 5 より小さい場合という条件式が真の場合にループ文を実行するということです。</p>
-<p>また、ループ文の最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> の値に 1 を足しています。</p>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> は終わらないループを繰り返すことにもなりかねないので、注意しましょう。</p>
-<p>ループが終わらない場合は、 ■ を押すか、<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> でコードの実行を中止しましょう。</p>
+<p>上の文は <code class="docutils literal notranslate"><span class="pre">i</span></code> が 5 より小さい場合という条件式が真の場合にループ文を実行するということです。 また、ループ文の最後に <code class="docutils literal notranslate"><span class="pre">i</span></code> の値に 1 を足しています。 <code class="docutils literal notranslate"><span class="pre">while</span></code> は終わらないループを繰り返すことにもなりかねないので、注意しましょう。 ループが終わらない場合は、 ■ を押すか、<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> でコードの実行を中止しましょう。</p>
 </div>
 </div>
 <div class="section" id="条件分岐">
 <h2>条件分岐<a class="headerlink" href="#条件分岐" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>条件分岐は <code class="docutils literal notranslate"><span class="pre">if</span></code> で行えます。</p>
-<p>実行文はインデントで字下げします。</p>
-<p>次のような形になります。 <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">if</span> <span class="pre">[条件式]:</span>&#160;&#160;&#160; <span class="pre">実行文</span></code></p>
+<p>条件分岐は <code class="docutils literal notranslate"><span class="pre">if</span></code> で行えます。 実行文はインデントで字下げします。 次のような形になります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span><span class="n">条件式</span><span class="p">]:</span>
+    <span class="n">実行文</span>
+</pre></div>
+</div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
@@ -1485,9 +1427,7 @@ Hello World!
 True
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> によって複数の条件分岐ができます。</p>
-<p>上から条件式を満たすかが判断されていきます。</p>
-<p><code class="docutils literal notranslate"><span class="pre">else</span></code> は、<code class="docutils literal notranslate"><span class="pre">if</span></code> と <code class="docutils literal notranslate"><span class="pre">elif</span></code> を満たさなかった場合のみ実行されます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> によって複数の条件分岐ができます。 上から条件式を満たすかが判断されていきます。 <code class="docutils literal notranslate"><span class="pre">else</span></code> は、<code class="docutils literal notranslate"><span class="pre">if</span></code> と <code class="docutils literal notranslate"><span class="pre">elif</span></code> を満たさなかった場合のみ実行されます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
@@ -1517,9 +1457,7 @@ other
 </div>
 <div class="section" id="関数">
 <h2>関数<a class="headerlink" href="#関数" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>何度も同じような操作を何度も使うには、関数を用いましょう。</p>
-<p>関数を使うと、操作を再利用することができます。</p>
-<p>関数は次のように <code class="docutils literal notranslate"><span class="pre">def</span></code> を使って定義します。</p>
+<p>何度も同じような操作を何度も使うには、関数を用いましょう。 関数を使うと、操作を再利用することができます。 関数は次のように <code class="docutils literal notranslate"><span class="pre">def</span></code> を使って定義します。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
@@ -1550,8 +1488,7 @@ other
 </pre></div>
 </div>
 </div>
-<p>ループ文の場合と同じで、関数の定義もインデントして書きます。</p>
-<p>引数をもつ関数を定義するには引数を <code class="docutils literal notranslate"><span class="pre">()</span></code> 内で指定します。</p>
+<p>ループ文の場合と同じで、関数の定義もインデントして書きます。 引数をもつ関数を定義するには引数を <code class="docutils literal notranslate"><span class="pre">()</span></code> 内で指定します。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
@@ -1582,8 +1519,7 @@ other
 </pre></div>
 </div>
 </div>
-<p>関数によって返される戻り値は <code class="docutils literal notranslate"><span class="pre">return</span></code> で指定します。</p>
-<p><code class="docutils literal notranslate"><span class="pre">return</span></code> の下は実行されないので、注意してください。</p>
+<p>関数によって返される戻り値は <code class="docutils literal notranslate"><span class="pre">return</span></code> で指定します。 <code class="docutils literal notranslate"><span class="pre">return</span></code> の下は実行されないので、注意してください。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
@@ -1616,8 +1552,7 @@ above return
 </pre></div>
 </div>
 </div>
-<p>引数の数を任意にすることも可能です。 引数に <code class="docutils literal notranslate"><span class="pre">*args</span></code> を入れると、指定した数以上の引数は <code class="docutils literal notranslate"><span class="pre">args</span></code> にタプルとして格納されます。</p>
-<p>また、引数に <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> を入れると、指定した数以上の <code class="docutils literal notranslate"><span class="pre">key=value</span></code> という引数は <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> に辞書として格納されます。</p>
+<p>引数の数を任意にすることも可能です。 引数に <code class="docutils literal notranslate"><span class="pre">*args</span></code> を入れると、指定した数以上の引数は <code class="docutils literal notranslate"><span class="pre">args</span></code> にタプルとして格納されます。 また、引数に <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> を入れると、指定した数以上の <code class="docutils literal notranslate"><span class="pre">key=value</span></code> という引数は <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> に辞書として格納されます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
@@ -1715,10 +1650,7 @@ local variable
 </pre></div>
 </div>
 </div>
-<p>確かに関数内では変数を定義しているし、関数内では参照できているのですが、関数外では参照することができませんでした。</p>
-<p>変数や関数を参照できる範囲を <strong>スコープ</strong> と呼びます。</p>
-<p>関数内で定義した変数を <strong>ローカル変数</strong> といいます。ローカル変数のスコープは定義された変数の中になります。</p>
-<p>一方、いままで定義していた変数は <strong>グローバル変数</strong> といいます。こちらは関数内外で参照することができます。</p>
+<p>確かに関数内では変数を定義しているし、関数内では参照できているのですが、関数外では参照することができませんでした。 変数や関数を参照できる範囲を <strong>スコープ</strong> と呼びます。 関数内で定義した変数を <strong>ローカル変数</strong> といいます。ローカル変数のスコープは定義された変数の中になります。 一方、いままで定義していた変数は <strong>グローバル変数</strong> といいます。こちらは関数内外で参照することができます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
@@ -1758,21 +1690,13 @@ local variable
 global variable
 </pre></div></div>
 </div>
-<p>さて、こうしたローカル変数およびスコープというものがあると何が嬉しいのでしょうか。</p>
-<p>一つは、関数の影響を最小限にとどめられるということです。</p>
-<p>例えば、関数の中と外で <code class="docutils literal notranslate"><span class="pre">x</span></code> という変数を定義していて、</p>
-<p>関数を呼び出すたびに <code class="docutils literal notranslate"><span class="pre">x</span></code> の値が書き換わっていたらどうでしょうか。</p>
-<p>変数を定義するたびに、関数の中の変数もチェックして、変数名が被っていないかを考えなくてはいけません。</p>
-<p>数行程度ならばできるでしょうが、数百、数千行のコードとなると、全ての変数名を把握するのは難しいでしょう。</p>
-<p>ローカル変数は参照の範囲をあえて狭めることによって、そういったことを防ぐ役割を果たすのです。</p>
+<p>さて、こうしたローカル変数およびスコープというものがあると何が嬉しいのでしょうか。 一つは、関数の影響を最小限にとどめられるということです。 例えば、関数の中と外で <code class="docutils literal notranslate"><span class="pre">x</span></code> という変数を定義していて、 関数を呼び出すたびに <code class="docutils literal notranslate"><span class="pre">x</span></code> の値が書き換わっていたらどうでしょうか。 変数を定義するたびに、関数の中の変数もチェックして、変数名が被っていないかを考えなくてはいけません。 数行程度ならばできるでしょうが、数百、数千行のコードとなると、全ての変数名を把握するのは難しいでしょう。
+ローカル変数は参照の範囲をあえて狭めることによって、そういったことを防ぐ役割を果たすのです。</p>
 </div>
 </div>
 <div class="section" id="モジュールのインポート">
 <h2>モジュールのインポート<a class="headerlink" href="#モジュールのインポート" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Python を起動したときにすでにいくつかの型、関数を使うことができます（これらを組み込み型、組み込み関数といいます）。</p>
-<p>R を使ったことがある人はおなじみかも知れませんが、R では <code class="docutils literal notranslate"><span class="pre">library</span></code> を使うことによって、使える型、関数を追加することができます。</p>
-<p>Python では、モジュールを追加するには、<code class="docutils literal notranslate"><span class="pre">import</span></code> を使います。</p>
-<p>ここでは、時間に関する操作に役立つ、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールを使えるようにしてみましょう。</p>
+<p>Python を起動したときにすでにいくつかの型、関数を使うことができます（これらを組み込み型、組み込み関数といいます）。 R を使ったことがある人はおなじみかも知れませんが、R では <code class="docutils literal notranslate"><span class="pre">library</span></code> を使うことによって、使える型、関数を追加することができます。 Python では、モジュールを追加するには、<code class="docutils literal notranslate"><span class="pre">import</span></code> を使います。 ここでは、時間に関する操作に役立つ、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールを使えるようにしてみましょう。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
@@ -1782,8 +1706,7 @@ global variable
 </pre></div>
 </div>
 </div>
-<p>無事追加できた場合には、特になにも結果がでません。</p>
-<p>存在しないモジュールを追加しようとした場合には、エラーが返ってきます。</p>
+<p>無事追加できた場合には、特になにも結果がでません。 存在しないモジュールを追加しようとした場合には、エラーが返ってきます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
@@ -1794,8 +1717,7 @@ global variable
 </pre></div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールには、様々なデータ型が用意されています。</p>
-<p>モジュールから特定の部分のみを追加したい場合は、<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">モジュール名</span> <span class="pre">import</span> <span class="pre">名前</span></code> とします。</p>
+<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> モジュールには、様々なデータ型が用意されています。 モジュールから特定の部分のみを追加したい場合は、<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">モジュール名</span> <span class="pre">import</span> <span class="pre">名前</span></code> とします。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
@@ -1805,9 +1727,7 @@ global variable
 </pre></div>
 </div>
 </div>
-<p>追加したモジュールの関数を使いたい場合は、<code class="docutils literal notranslate"><span class="pre">モジュール名.名前</span></code> で使用できます。</p>
-<p>それでは、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型を作ってみましょう。</p>
-<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型は <code class="docutils literal notranslate"><span class="pre">datetime(year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">minute,</span> <span class="pre">second)</span></code> のように作成します（最後の 2 つは省略可能です）。</p>
+<p>追加したモジュールの関数を使いたい場合は、<code class="docutils literal notranslate"><span class="pre">モジュール名.名前</span></code> で使用できます。 それでは、<code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型を作ってみましょう。 <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 型は <code class="docutils literal notranslate"><span class="pre">datetime(year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">minute,</span> <span class="pre">second)</span></code> のように作成します（最後の 2 つは省略可能です）。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
@@ -1840,12 +1760,7 @@ global variable
 </div>
 <div class="section" id="属性-(Attribute)">
 <h2>属性 (Attribute)<a class="headerlink" href="#属性-(Attribute)" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>あるオブジェクトを作成した場合、そのオブジェクトには固有の変数が追加されることがあります。</p>
-<p>その変数を属性といいます。</p>
-<p>例えば、<code class="docutils literal notranslate"><span class="pre">datetime</span></code>型の属性は、<code class="docutils literal notranslate"><span class="pre">year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">mitute,</span> <span class="pre">second</span></code> などです。</p>
-<p>属性を呼び出すには、<code class="docutils literal notranslate"><span class="pre">オブジェクト.属性名</span></code> とします。</p>
-<p>メソッドと違うのは、属性は関数ではなく、変数であるということです。</p>
-<p>なので、<code class="docutils literal notranslate"><span class="pre">()</span></code> といった引数は無用です。</p>
+<p>あるオブジェクトを作成した場合、そのオブジェクトには固有の変数が追加されることがあります。 その変数を属性といいます。 例えば、<code class="docutils literal notranslate"><span class="pre">datetime</span></code>型の属性は、<code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">day</span></code>, <code class="docutils literal notranslate"><span class="pre">mitute</span></code>, <code class="docutils literal notranslate"><span class="pre">second</span></code> などです。 属性を呼び出すには、<code class="docutils literal notranslate"><span class="pre">オブジェクト.属性名</span></code> とします。 メソッドと違うのは、属性は関数ではなく、変数であるということです。 なので、<code class="docutils literal notranslate"><span class="pre">()</span></code> といった引数は無用です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
 </pre></div>
@@ -1886,11 +1801,10 @@ global variable
 </div>
 <div class="section" id="組み込み関数">
 <h2>組み込み関数<a class="headerlink" href="#組み込み関数" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>最後に、Python の組み込み関数を少し見てみましょう。</p>
-<p>完全な一覧は <a class="reference external" href="https://docs.python.jp/3/library/functions.html">ドキュメント</a> を参照してください。</p>
+<p>最後に、Python の組み込み関数を少し見てみましょう。 完全な一覧は <a class="reference external" href="https://docs.python.jp/3/library/functions.html">ドキュメント</a> を参照してください。</p>
 <div class="section" id="type:-型を調べる">
 <h3>type: 型を調べる<a class="headerlink" href="#type:-型を調べる" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>ある変数やモジュールの一部がデータ型なのか関数なのか、よくわからない場合は、<code class="docutils literal notranslate"><span class="pre">type()</span></code> を使います。</p>
+<p>ある変数やモジュールの一部がデータ型なのか関数なのか、よくわからない場合は、<code class="docutils literal notranslate"><span class="pre">type</span></code> を使います。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
 </pre></div>
@@ -1993,8 +1907,7 @@ global variable
 </div>
 <div class="section" id="データ型を作る">
 <h3>データ型を作る<a class="headerlink" href="#データ型を作る" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>int, float, str, list, tuple, dict などは、指定の型に変換します。</p>
-<p>ただし、例えば文字列を整数型に変換することはできないなどの規則があります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code> などは、指定の型に変換します。 ただし、例えば文字列を整数型に変換することはできないなどの規則があります。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
 </pre></div>
