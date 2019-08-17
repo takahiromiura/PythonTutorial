@@ -1,222 +1,43 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>HTML &mdash; Python Tutorial 1.00 ドキュメント</title>
-  
 
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML &#8212; Python Tutorial 1.00 ドキュメント</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="prev" title="Python を使ったデータ分析" href="../notebooks/DataAnalysis.html" /> 
-</head>
+    <link rel="prev" title="Tips" href="../notebooks/Tips.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../notebooks/Tips.html" title="Tips"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
 
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home"> Python Tutorial
-          
-
-          
-          </a>
-
-          
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Python事始め.html">Python 事始め</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/Tutorial.html">Python チュートリアル</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/DataAnalysis.html">Python を使ったデータ分析</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">ドキュメントツリー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">要素の順番</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">ブロックレベルの要素</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#h">h 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#p">p 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#table">table 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ul">ul 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ol">ol 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dl">dl 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#div">div 要素</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">インラインレベルの要素</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#a">a 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#img">img 要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#span">span 要素</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">入力フォーム</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#input">input 要素</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id6">テキスト</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">チェックボックス</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">ラジオボタン</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">送信ボタン</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">セレクトボックス</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">フォーム 要素</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#css">CSS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id-class">id, class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">結合子</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#e-f">E F</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Python Tutorial</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>HTML</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/rst/Webサイトの構成要素.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="html">
+  <div class="section" id="html">
 <h1>HTML<a class="headerlink" href="#html" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>HTML (HyperText Markup Language) は名前こそとっつきづらいですが、知ってしまえばそこまで難しいものではありません。
 HTML は IE, Firefox, GoogleChrome など、ブラウザ上に文書を表示するためのマークアップ言語です。
@@ -658,50 +479,95 @@ Web スクレイピングをする際にも、この <strong>セレクタ</stron
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../notebooks/DataAnalysis.html" class="btn btn-neutral float-left" title="Python を使ったデータ分析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, Takahiro Miura
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">HTML</a><ul>
+<li><a class="reference internal" href="#id1">ドキュメントツリー</a></li>
+<li><a class="reference internal" href="#id2">要素の順番</a></li>
+<li><a class="reference internal" href="#id3">ブロックレベルの要素</a><ul>
+<li><a class="reference internal" href="#h">h 要素</a></li>
+<li><a class="reference internal" href="#p">p 要素</a></li>
+<li><a class="reference internal" href="#table">table 要素</a></li>
+<li><a class="reference internal" href="#ul">ul 要素</a></li>
+<li><a class="reference internal" href="#ol">ol 要素</a></li>
+<li><a class="reference internal" href="#dl">dl 要素</a></li>
+<li><a class="reference internal" href="#div">div 要素</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">インラインレベルの要素</a><ul>
+<li><a class="reference internal" href="#a">a 要素</a></li>
+<li><a class="reference internal" href="#img">img 要素</a></li>
+<li><a class="reference internal" href="#span">span 要素</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">入力フォーム</a><ul>
+<li><a class="reference internal" href="#input">input 要素</a><ul>
+<li><a class="reference internal" href="#id6">テキスト</a></li>
+<li><a class="reference internal" href="#id7">チェックボックス</a></li>
+<li><a class="reference internal" href="#id8">ラジオボタン</a></li>
+<li><a class="reference internal" href="#id9">送信ボタン</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">セレクトボックス</a></li>
+<li><a class="reference internal" href="#id11">フォーム 要素</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#css">CSS</a><ul>
+<li><a class="reference internal" href="#id-class">id, class</a></li>
+<li><a class="reference internal" href="#id13">結合子</a><ul>
+<li><a class="reference internal" href="#e-f">E F</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
-</body>
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../notebooks/Tips.html"
+                        title="前の章へ">Tips</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/Webサイトの構成要素.rst.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../notebooks/Tips.html" title="Tips"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Takahiro Miura.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 で生成しました。
+    </div>
+  </body>
 </html>

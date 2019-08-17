@@ -1,190 +1,45 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Python を使ったデータ分析 &mdash; Python Tutorial 1.00 ドキュメント</title>
-  
 
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Python を使ったデータ分析 &#8212; Python Tutorial 1.00 ドキュメント</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Tips" href="Tips.html" />
+    <link rel="next" title="Python Class" href="Class.html" />
     <link rel="prev" title="Python チュートリアル" href="Tutorial.html" /> 
-</head>
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="Class.html" title="Python Class"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="Tutorial.html" title="Python チュートリアル"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../rst/index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
 
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="../rst/index.html" class="icon icon-home"> Python Tutorial
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../rst/Python事始め.html">Python 事始め</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Python チュートリアル</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python を使ったデータ分析</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Numpy">Numpy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ndarray">ndarray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#属性">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#行列計算">行列計算</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ブロードキャスト">ブロードキャスト</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#乱数生成">乱数生成</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#Scipy">Scipy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#optimize">optimize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stats">stats</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#Pandas">Pandas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Series">Series</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#要素の参照">要素の参照</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#計算">計算</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#文字列操作">文字列操作</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#DataFrame">DataFrame</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#要素の参照">要素の参照</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#I/O-（入出力）処理">I/O （入出力）処理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#グループ化">グループ化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#データの結合">データの結合</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Tips.html">Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html">HTML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html#css">CSS</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../rst/index.html">Python Tutorial</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../rst/index.html">Docs</a> &raquo;</li>
-        
-      <li>Python を使ったデータ分析</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/notebooks/DataAnalysis.ipynb.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   
 <style>
@@ -384,28 +239,6 @@ div.rendered_html tbody tr:nth-child(odd) {
 }
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
 }
 </style>
 <div class="section" id="Python-を使ったデータ分析">
@@ -3693,52 +3526,92 @@ Name: one, dtype: bool
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Tips.html" class="btn btn-neutral float-right" title="Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Tutorial.html" class="btn btn-neutral float-left" title="Python チュートリアル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, Takahiro Miura
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../rst/index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python を使ったデータ分析</a><ul>
+<li><a class="reference internal" href="#Numpy">Numpy</a><ul>
+<li><a class="reference internal" href="#ndarray">ndarray</a></li>
+<li><a class="reference internal" href="#属性">属性</a></li>
+<li><a class="reference internal" href="#行列計算">行列計算</a></li>
+<li><a class="reference internal" href="#ブロードキャスト">ブロードキャスト</a></li>
+<li><a class="reference internal" href="#乱数生成">乱数生成</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Scipy">Scipy</a><ul>
+<li><a class="reference internal" href="#optimize">optimize</a></li>
+<li><a class="reference internal" href="#stats">stats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Pandas">Pandas</a><ul>
+<li><a class="reference internal" href="#Series">Series</a><ul>
+<li><a class="reference internal" href="#要素の参照">要素の参照</a></li>
+<li><a class="reference internal" href="#計算">計算</a></li>
+<li><a class="reference internal" href="#文字列操作">文字列操作</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#DataFrame">DataFrame</a><ul>
+<li><a class="reference internal" href="#要素の参照">要素の参照</a></li>
+<li><a class="reference internal" href="#I/O-（入出力）処理">I/O （入出力）処理</a></li>
+<li><a class="reference internal" href="#グループ化">グループ化</a></li>
+<li><a class="reference internal" href="#データの結合">データの結合</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
-</body>
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="Tutorial.html"
+                        title="前の章へ">Python チュートリアル</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="Class.html"
+                        title="次の章へ">Python Class</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/notebooks/DataAnalysis.ipynb.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="Class.html" title="Python Class"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="Tutorial.html" title="Python チュートリアル"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../rst/index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Takahiro Miura.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 で生成しました。
+    </div>
+  </body>
 </html>

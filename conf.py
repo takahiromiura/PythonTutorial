@@ -32,8 +32,8 @@ release = '1.00'
 # ones.
 extensions = [
     'sphinx.ext.todo',
-    'sphinx.ext.mathjax'
-]
+    'sphinx.ext.mathjax',
+]ß
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,7 +59,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'temp']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "nature"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
