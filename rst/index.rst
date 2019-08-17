@@ -33,6 +33,7 @@ Python と Web ページが一通りわかるようになったら、Web スク�
    ../notebooks/Class
    ../notebooks/Tips
    Webサイトの構成要素
+   ../notebooks/WebScraping
 
 ..    web_scraping
 ..    Selenium

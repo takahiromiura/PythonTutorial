@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web スクレイピング入門 &#8212; Python Tutorial 1.00 ドキュメント</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="HTML" href="../rst/Webサイトの構成要素.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../rst/Webサイトの構成要素.html" title="HTML"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../rst/index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="Web-スクレイピング入門">
+<h1>Web スクレイピング入門<a class="headerlink" href="#Web-スクレイピング入門" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Python の使い方も学び、Web ページの構造も理解したので、早速 Web スクレイピングをしていきましょう。 まず、このページでは手始めに <a class="reference external" href="https://news.yahoo.co.jp/topics">Yahoo news のトピックス一覧</a> から、各記事のタイトルを収集することを目指します。</p>
+<div class="section" id="requests">
+<h2>requests<a class="headerlink" href="#requests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、python を使って、Web ページのコンテンツをとってみましょう。 これには、 <code class="docutils literal notranslate"><span class="pre">requests</span></code> というモジュールを使います。 Python にも似たようなものがありますが、 <code class="docutils literal notranslate"><span class="pre">requests</span></code> の方が使いやすいです。 コンテンツが欲しい Web ページの URL について、 <code class="docutils literal notranslate"><span class="pre">requests.get(URL)</span></code> とすると、Web サーバーに Web ページのコンテンツを送ってくれという要求をすることができます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://news.yahoo.co.jp/topics&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>200
+</pre></div>
+</div>
+</div>
+<p>最後の行は、ステータスコードというものを表していてます。 ステータスコードは Web サーバーへの要求が上手くいったかを判別することができるので、毎回チェックしておきましょう。 200 は、Web サーバーの要求が無事成功したことを示しています。 ステータスコードは 200 以外にも、様々な値を返すので、やりながら学んでいけば良いでしょう。</p>
+</div>
+<div class="section" id="BeautifulSoup">
+<h2>BeautifulSoup<a class="headerlink" href="#BeautifulSoup" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、Web ページのコンテンツからデータを取りやすいようにします。 ここでは、<code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> を用います。 <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> は使い方がわかりやすいので、入門としては良いでしょう。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">lxml</span></code> というのは、htmlのパーサーの一つです。 パーサーというのは、HTML を解析して分析しやすくしてくれます。 また、タグの閉じ忘れなどを直してくれます。 <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> には 4 つほどのパーサーを使えますが、<code class="docutils literal notranslate"><span class="pre">lxml</span></code> は使いやすさと早さを兼ね備えているので、これを使います。</p>
+<p>HTML の章で解説しましたが、Web ページは様々な要素が入れ子になっています。 したがって、自分の欲しい情報をとるには、その情報が置いてある要素を上手く指定することが大事です。 要素を指定する方法は、CSS のところで解説しました。 それでは、我々の欲しい情報は一体どこに位置しているのでしょうか？</p>
+<p>実は、Google Chrome や　Firefox などのモダンブラウザには、それを分かりやすくする機能が備わっています。 Web ページを開いて、<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">I</span></code> を押すか、右クリックを押してから、検証（インスペクタ）を押してみましょう。 画面が 2 分割され、左側に Web ページ、右側に html が表示されるでしょう。 右側の左上のカーソルのマークをクリックしてから、左側の適当なところを押してみましょう。 すると、そのテキストが html 内のどこにあるかが、右側に表示されます。</p>
+<p>この機能を使って、欲しい情報はどこにあるのかを探っていきます。 ここでは、トピックス一覧の内容が欲しいので、その内のどれかを押してみましょう。 一覧の内容は全てリンクが張られているので、 <code class="docutils literal notranslate"><span class="pre">a</span></code> 要素に含まれていることがわかりました。</p>
+<p><img alt="a" src="../_images/inspect_a.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> は <code class="docutils literal notranslate"><span class="pre">select</span></code> で CSS セレクターを使うことができます。 下の例では <code class="docutils literal notranslate"><span class="pre">a</span></code> 要素を取ってきています。 <code class="docutils literal notranslate"><span class="pre">select</span></code> は CSS セレクターで指定した要素をタグごとにリストに含めます。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bs</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+152
+</pre></div></div>
+</div>
+<p>返ってくる要素が多すぎます。 Web ページは多くのところでリンクを貼っているので、<code class="docutils literal notranslate"><span class="pre">a</span></code> 要素だと制限が緩すぎます。 別の方法を考えましょう。 各トピックの全体を検証してみると、トピック毎に <code class="docutils literal notranslate"><span class="pre">div</span></code> 要素でくくられていることがわかります。 それでは、<code class="docutils literal notranslate"><span class="pre">div</span></code> 要素を指定してみましょう。</p>
+<p><img alt="ul" src="../_images/inspect_div.png" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 表示は省略</span>
+<span class="c1"># bs.select(&#39;div&#39;)</span>
+</pre></div>
+</div>
+</div>
+<p>先程よりはましですが、まだ余計なものが残っています。 よく見ると、この <code class="docutils literal notranslate"><span class="pre">div</span></code> 要素には <code class="docutils literal notranslate"><span class="pre">topicsList</span></code> というクラス名が割り当てられています。 <code class="docutils literal notranslate"><span class="pre">.topicsList</span></code> として、このクラスを持つ要素を取ってみましょう。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topics</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;.topicsList&#39;</span><span class="p">)</span>
+<span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;div class=&quot;topicsList&quot;&gt;&lt;p class=&quot;topicsList_title&quot;&gt;&lt;a data-ylk=&quot;rsec:tpc_dom;slk:top;&quot; href=&quot;/categories/domestic&quot;&gt;国内&lt;/a&gt;&lt;/p&gt;&lt;ul class=&quot;topicsList_main&quot;&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:1;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333598&quot;&gt;各地猛暑 気象庁「命の危険」&lt;span aria-label=&quot;NEW&quot; class=&quot;labelIcon labelIcon-NEW&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:2;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333606&quot;&gt;Uターンピーク 各地で混雑&lt;span aria-label=&quot;動画&quot; class=&quot;labelIcon labelIcon-VIDEO&quot;&gt;&lt;/span&gt;&lt;span aria-label=&quot;NEW&quot; class=&quot;labelIcon labelIcon-NEW&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:3;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333611&quot;&gt;悠仁さまブータン到着 初海外&lt;span aria-label=&quot;NEW&quot; class=&quot;labelIcon labelIcon-NEW&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:4;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333577&quot;&gt;アフリカ諸国と「2国間委」&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:5;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333519&quot;&gt;北のミサイル 新型は3種類か&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:6;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333567&quot;&gt;F35Bを正式導入 1機140億円&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:7;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333548&quot;&gt;N国の炎上商法 報道への警鐘&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;topicsListItem&quot; data-ual=&quot;&quot; data-ual-view-type=&quot;list&quot;&gt;&lt;a data-ual-gotocontent=&quot;true&quot; data-ylk=&quot;rsec:tpc_dom;slk:title;pos:8;&quot; href=&quot;https://news.yahoo.co.jp/pickup/6333532&quot;&gt;そもそもなぜ?夫の実家へ帰省&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;topicsList_button&quot;&gt;&lt;p class=&quot;topicsList_button_more&quot;&gt;&lt;a data-ylk=&quot;rsec:tpc_dom;slk:more;&quot; href=&quot;/topics/domestic&quot;&gt;もっと見る&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<p>上手くいきました！各トピックがリストの各要素に入ってます。 それでは、ここからトピック毎に記事名を格納していきましょう。 <code class="docutils literal notranslate"><span class="pre">topicsList_title</span></code> クラスには、トピックのカテゴリーが入ってます。 各 <code class="docutils literal notranslate"><span class="pre">li</span></code> 要素（あるいは、<code class="docutils literal notranslate"><span class="pre">topicsListItem</span></code> クラス）には、各記事が入っています。 要素ごとに分けたら、<code class="docutils literal notranslate"><span class="pre">text</span></code> メソッドを使って、要素の内容を取り出します。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">print</span><span class="p">(</span><span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;.topicsList_title&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+国内
+各地猛暑 気象庁「命の危険」
+</pre></div></div>
+</div>
+<p>この作業をループ化して、<code class="docutils literal notranslate"><span class="pre">dict</span> <span class="pre">=</span> <span class="pre">{トピックのタイトル:[記事A,</span> <span class="pre">記事B]}</span></code> というように、辞書型にしていきます。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">news_topics</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
+    <span class="n">topic_title</span> <span class="o">=</span> <span class="n">topic</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;.topicsList_title&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">news_topics</span><span class="p">[</span><span class="n">topic_title</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">news</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">news</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">news_topics</span><span class="p">[</span><span class="s1">&#39;国内&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;各地猛暑 気象庁「命の危険」&#39;,
+ &#39;Uターンピーク 各地で混雑&#39;,
+ &#39;悠仁さまブータン到着 初海外&#39;,
+ &#39;アフリカ諸国と「2国間委」&#39;,
+ &#39;北のミサイル 新型は3種類か&#39;,
+ &#39;F35Bを正式導入 1機140億円&#39;,
+ &#39;N国の炎上商法 報道への警鐘&#39;,
+ &#39;そもそもなぜ?夫の実家へ帰省&#39;]
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[news.text</span> <span class="pre">for</span> <span class="pre">news</span> <span class="pre">in</span> <span class="pre">topic.select('li')]</span></code> はリスト内包表記というものです。 ここでは、<code class="docutils literal notranslate"><span class="pre">li</span></code> 要素を順に <code class="docutils literal notranslate"><span class="pre">news</span></code> に格納し、その要素の内容を <code class="docutils literal notranslate"><span class="pre">news.text</span></code> で取り出し、リストに入れていく処理をしています。</p>
+<p>ちなみに、さきほどの処理は次と同じです。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># news_list = {}</span>
+<span class="c1"># for topic in topics:</span>
+<span class="c1">#       topic_title = topic.select(&#39;.topicsList_title&#39;)[0].text</span>
+<span class="c1">#       news_topics[topic_title] = []</span>
+<span class="c1">#       for news in topic.select(&#39;li&#39;):</span>
+<span class="c1">#               news_topics[topic_title].append(news.text)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<p>リスト内包表記は、普通にループ文を書くよりもスッキリとして書け、また早く処理することができます。</p>
+<p>せっかくなので、<code class="docutils literal notranslate"><span class="pre">pandas</span></code> の <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> に変換しましょう。 <code class="docutils literal notranslate"><span class="pre">dict</span></code> から <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> にするには、<code class="docutils literal notranslate"><span class="pre">from_dict</span></code> を使います。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topics_dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">news_topics</span><span class="p">)</span>
+<span class="n">topics_dt</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>国内</th>
+      <th>国際</th>
+      <th>経済</th>
+      <th>エンタメ</th>
+      <th>スポーツ</th>
+      <th>IT</th>
+      <th>科学</th>
+      <th>地域</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>各地猛暑 気象庁「命の危険」</td>
+      <td>米 イラン船に差し押さえ令状</td>
+      <td>アルゼンチン、国債格下げ</td>
+      <td>弘中アナ ニッポン放送で特番</td>
+      <td>速報 仙台育英vs.敦賀気比</td>
+      <td>初期キズナアイ 活動休止せず</td>
+      <td>作り置きのお茶 賞味期限は</td>
+      <td>池袋遺族 前日に最後の電話</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Uターンピーク 各地で混雑</td>
+      <td>米入国審査システムに障害</td>
+      <td>内定辞退予測 YKKなども購入</td>
+      <td>「中学生日記」ラジオで復活</td>
+      <td>星稜 タイブレーク制し8強</td>
+      <td>LINEグループ しんどいときは</td>
+      <td>猫アレルギー減 ワクチン開発</td>
+      <td>不正送金 容疑の大学生を逮捕</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>悠仁さまブータン到着 初海外</td>
+      <td>「新兵器」正恩氏指導と報道</td>
+      <td>調理が簡単 冷凍野菜の輸入増</td>
+      <td>テレビ「2時間枠」なぜ減少?</td>
+      <td>奥川 最速154キロ&amp;圧巻23K</td>
+      <td>7pay問題クオカード配布 なぜ</td>
+      <td>ヒマワリ 太陽追うのは咲く前</td>
+      <td>あおり殴打 43歳男を指名手配</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>アフリカ諸国と「2国間委」</td>
+      <td>五輪会議 北が一転来日せず</td>
+      <td>600人の村でもキャッシュレス</td>
+      <td>映画ドラクエ訴訟 争点を解説</td>
+      <td>甲子園応援「Gフレア」 躍進</td>
+      <td>Apple23日にHomePod日本発売</td>
+      <td>百日ぜき流行 1万人超の背景</td>
+      <td>仙台市選管 ミスが「恒例化」</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>北のミサイル 新型は3種類か</td>
+      <td>孤立深まる 正念場の文外交</td>
+      <td>顔ハメ聖地に?タワレコの狙い</td>
+      <td>浜崎あゆみ小説 来春連ドラに</td>
+      <td>大坂 全米前のけがに「嫌気」</td>
+      <td>大手3社 災害用伝言板を提供</td>
+      <td>160cm巨大ペンギン 化石発見</td>
+      <td>不自由展中止 検証委が初会合</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>F35Bを正式導入 1機140億円</td>
+      <td>キャセイ航空CEO 引責辞任</td>
+      <td>サンキューハザード 違反恐れ</td>
+      <td>吉本ではないサンド 増す勢い</td>
+      <td>水質悪化 W杯スイムを中止</td>
+      <td>楽天 携帯基地局の整備に遅れ</td>
+      <td>原爆小頭症 家族も苦難の人生</td>
+      <td>波にさらわれた11歳 遺体発見</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>N国の炎上商法 報道への警鐘</td>
+      <td>インドネシア 首都移転の提案</td>
+      <td>ガンダム最初は1年で打ち切り</td>
+      <td>HGら6人 関係者に謝罪行脚</td>
+      <td>錦織破った西岡 食中毒で棄権</td>
+      <td>京都の五山送り火 中止は誤解</td>
+      <td>台風が海吸い上げ 危険な高潮</td>
+      <td>プール事故 浮く遊具の危険性</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>そもそもなぜ?夫の実家へ帰省</td>
+      <td>米俳優P・フォンダさん死去</td>
+      <td>刺身に生野菜 常識超える駅弁</td>
+      <td>吉本興業の寄付 NPOが拒否</td>
+      <td>渋野 お菓子「タラタラ」封印</td>
+      <td>第一生命 スマホで保険加入</td>
+      <td>映像 ゾウが豆腐を鼻でつかむ</td>
+      <td>赤字に負けない 猫駅長相づち</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../rst/index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Web スクレイピング入門</a><ul>
+<li><a class="reference internal" href="#requests">requests</a></li>
+<li><a class="reference internal" href="#BeautifulSoup">BeautifulSoup</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../rst/Webサイトの構成要素.html"
+                        title="前の章へ">HTML</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/notebooks/WebScraping.ipynb.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../rst/Webサイトの構成要素.html" title="HTML"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../rst/index.html">Python Tutorial 1.00 ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Takahiro Miura.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 で生成しました。
+    </div>
+  </body>
+</html>
