@@ -30,6 +30,7 @@ Python と Web ページが一通りわかるようになったら、Web スク�
    Python事始め
    ../notebooks/Tutorial
    ../notebooks/DataAnalysis
+   ../notebooks/Class
    ../notebooks/Tips
    Webサイトの構成要素
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>クラス &mdash; Python Tutorial 1.00 ドキュメント</title>
+  <title>Python Class &mdash; Python Tutorial 1.00 ドキュメント</title>
   
 
   
@@ -86,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/Python事始め.html">Python 事始め</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Python チュートリアル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DataAnalysis.html">Python を使ったデータ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tips.html">Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/Webサイトの構成要素.html#css">CSS</a></li>
 </ul>
@@ -133,7 +134,7 @@
     
       <li><a href="../rst/index.html">Docs</a> &raquo;</li>
         
-      <li>クラス</li>
+      <li>Python Class</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -374,90 +375,111 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
+<div class="section" id="Python-Class">
+<h1>Python Class<a class="headerlink" href="#Python-Class" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="クラス">
-<h1>クラス<a class="headerlink" href="#クラス" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>最初に書いた通り、Python はオブジェクト指向プログラミング言語です。 オブジェクト指向のプログラミングをすると、どういったメリットがあるのでしょうか。 それは、コードを整理整頓することができるという一言に尽きると思います。</p>
-<p>その効果を見ていくために、次のタスクを考えてみましょう。</p>
-<p>Python では、クラスを使うことによってそういった関数や変数をひとまとめにすることができます。 <code class="docutils literal notranslate"><span class="pre">class</span></code> によってクラスを定義します。</p>
-<ul class="simple">
-<li><p>アンケートのデータ分析</p></li>
-</ul>
-<p>あなたは、ある機関が集計したアンケートのデータ 5 年分を使って、年収と年齢の関係を調べようとしています。 また、性別や婚姻状況がもたらす影響もその際には考慮しなければいけません。</p>
-<p>残念ながら、年収や年齢などという変数は作成していないようです。 代わりに、 q02, q12 などの質問項目がそれらと対応していることがわかりました。</p>
-<p>さらにやっかいなのは、年収や年齢に対応する質問項目がアンケートの実施年によって異なることです！</p>
-<p>さて、あなたはデータ分析をする前に、まずデータをきれいに整形する必要が出てきました。 やることをリストにすると、次のようになるでしょう。</p>
-<ol class="arabic simple">
-<li><p>年収の変数を作成する</p></li>
-<li><p>年齢の変数を作成する</p></li>
-<li><p>同様に、他に使用する変数を作成する</p></li>
-</ol>
-<p>上記の操作は各年のアンケートで行うので、関数を作成して使いまわしした方が良いでしょう。 例えば、次のような関数を作ることになるでしょう。</p>
-<ul class="simple">
-<li><p>サーベイの読み込み</p></li>
-<li><p>年収の変数の作成（対応する質問項目を指定する）</p></li>
-<li><p>年齢の変数の作成（対応する質問項目を指定する）</p></li>
-<li><p>他、変数の作成（対応する質問項目を指定する）</p></li>
-</ul>
-<p>ここまでは何をやっているかは把握できるでしょう。しかし、追加で都道府県別のデータも使用することになった場合はどうでしょうか。しかも、この場合もデータを整形する必要があるとしたら。</p>
-<p>各種データの操作をひとまとめにしたら、すっきりするのではないでしょうか。また、各種データに使用する変数もひとまとめにできたら良いのではないでしょうか。</p>
+<h2>クラス<a class="headerlink" href="#クラス" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>分析が複雑になると、多くの関数を書く必要がでてきます。</p>
+<p>ただし、多くの関数を書くと、様々な問題が出てきます。</p>
+<p>長い関数を書くと、変更に弱くなります。</p>
+<p>また、途中の計算結果のみを取得したい場合は、その後の無駄な計算をしてしまいます。</p>
+<p>一方で、短い関数に分けて作ると、管理が難しくなります。</p>
+<p>例えば、ある関数はデータ A に関する操作、ある関数はデータ B に関する操作だった場合、どちらのデータの関数かを覚えておかないといけません。</p>
+<p>クラスを使えば、関数や変数をひとまとめにすることができ、そういった問題を解決することができます。</p>
+<p>クラスは、<code class="docutils literal notranslate"><span class="pre">class</span></code> によって定義します。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">FirstClass</span><span class="p">:</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">First</span><span class="p">:</span>
 
     <span class="k">pass</span>
+
 </pre></div>
 </div>
 </div>
-<p>関数と同じように、クラスの内容をインデント・ブロック内に書いていきます。 まず <code class="docutils literal notranslate"><span class="pre">FirstClass</span></code> というクラスを定義しました。 次のようにクラスを呼び出してみます。</p>
+<p>まず <code class="docutils literal notranslate"><span class="pre">First</span></code> というクラスを定義しました。</p>
+<p>関数と同じように、クラスの内容をインデント・ブロック内に書いていきます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">pass</span></code> は何もしないという意味です。</p>
+<p>何も書かないとエラーになるので、<code class="docutils literal notranslate"><span class="pre">pass</span></code> を書いています。</p>
+<p>次のようにクラスを呼び出してみます。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">FirstClass</span><span class="p">()</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">First</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;__main__.FirstClass at 0x226a79d6b00&gt;
+<span></span>__main__.First
 </pre></div>
 </div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">First</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;__main__.First at 0x118ddc4a8&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="インスタンス">
+<h3>インスタンス<a class="headerlink" href="#インスタンス" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上の　<code class="docutils literal notranslate"><span class="pre">First</span></code> と <code class="docutils literal notranslate"><span class="pre">First()</span></code> はどういった違いがあるのかはわかりませんが、大きな違いがあります。</p>
+<p><code class="docutils literal notranslate"><span class="pre">First</span></code> はクラスを呼び出します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">First()</span></code> はクラスのインスタンスを返します。</p>
+<p>例えるならば、クラス自体は設計図のようなものです。</p>
+<p>インスタンスは、その設計図をもとに作られた建造物のようなものです。</p>
+<p>なぜ、この違いが重要なのかは後ほど説明します。</p>
 </div>
 <div class="section" id="属性">
-<h2>属性<a class="headerlink" href="#属性" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ただ、このクラスは特に変数も関数も持っていないので、変数を付与しましょう。</p>
+<h3>属性<a class="headerlink" href="#属性" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>さきほどのクラスは、特に変数も関数も持っていないので、変数を付与しましょう。</p>
 <p>次のように、インデント・ブロック内に変数を定義します。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">SecondClass</span><span class="p">:</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Second</span><span class="p">:</span>
 
     <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#クラス属性</span>
 </pre></div>
 </div>
 </div>
-<p>クラスの中で <code class="docutils literal notranslate"><span class="pre">a</span></code> という変数を定義しました。クラスが持つ変数を <strong>属性</strong> と呼びます。 また、属性にはクラス属性とインスタンス属性があります。</p>
-<p>インデント・ブロック内で定義した変数はクラス属性です。2 つの違いは後ほど説明します。 クラスの属性を参照するには、<code class="docutils literal notranslate"><span class="pre">クラス名.属性名</span></code> とします。</p>
+<p>クラスの中で <code class="docutils literal notranslate"><span class="pre">a</span></code> という変数を定義しました。クラスが持つ変数を <strong>属性</strong> と呼びます。</p>
+<p>また、属性にはクラス属性とインスタンス属性があります。</p>
+<p>インデント・ブロック内で定義した変数はクラス属性です。</p>
+<p>インスタンス属性の作り方は後ほど説明します。</p>
+<p>属性を参照するには、<code class="docutils literal notranslate"><span class="pre">クラス名.属性名</span></code> とします。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">SecondClass</span><span class="p">()</span><span class="o">.</span><span class="n">a</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Second</span><span class="o">.</span><span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -467,49 +489,28 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="メソッド">
-<h2>メソッド<a class="headerlink" href="#メソッド" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>メソッド<a class="headerlink" href="#メソッド" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>今度は、関数を持たせましょう。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">ThirdClass</span><span class="p">:</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Third</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="nf">print_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="mi">50</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">print_b</span><span class="p">():</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">50</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">print_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="n">print_b</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-50
-</pre></div></div>
 </div>
 <p>クラスが持つ関数を <strong>メソッド</strong> と呼びます。メソッドの呼び出しは <code class="docutils literal notranslate"><span class="pre">クラス名.メソッド名</span></code> とします。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ThirdClass</span><span class="p">()</span><span class="o">.</span><span class="n">print_b</span><span class="p">()</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Third</span><span class="p">()</span><span class="o">.</span><span class="n">print_3</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -518,114 +519,104 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-50
+3
 </pre></div></div>
 </div>
-<p>メソッドで注意しなければならないのは、メソッドでは自動的に第 1 引数としてクラス自身が参照されます。Python では慣例的にこれを <code class="docutils literal notranslate"><span class="pre">self</span></code> としてます。</p>
-<p>クラスの中のメソッドで違うメソッドを呼び出す場合、また属性を呼び出す場合は、<code class="docutils literal notranslate"><span class="pre">self.メソッド名</span></code>、<code class="docutils literal notranslate"><span class="pre">self.属性名</span></code> とすればできます。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<p>メソッドで注意しなければならないのは、メソッドでは自動的に第 1 引数としてインスタンス自身が代入されます。</p>
+<p>Python では慣例的にこれを <code class="docutils literal notranslate"><span class="pre">self</span></code> としてます。</p>
+<p>メソッドはクラスではなく、インスタンスでなければ使えないことに注意してください。</p>
+<p>インスタンスを作ると、<code class="docutils literal notranslate"><span class="pre">self</span></code> が使えるようになります。</p>
+<p>実際に、下のコードはエラーになります。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">FourthClass</span><span class="p">:</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Third.print_3()</span>
+</pre></div>
+</div>
+</div>
+<p>クラスの中のメソッドで違うメソッドを呼び出す場合、また属性を呼び出す場合は、<code class="docutils literal notranslate"><span class="pre">self.メソッド名</span></code>、<code class="docutils literal notranslate"><span class="pre">self.属性名</span></code> とすればできます。</p>
+<p>こうすることによって、用途ごとに関数や変数をまとめ、内部で使い回すことができます。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Fourth</span><span class="p">:</span>
 
     <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
 
     <span class="k">def</span> <span class="nf">print_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="c1"># 属性 a を出力</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="c1"># 属性 a を出力</span>
 
     <span class="k">def</span> <span class="nf">call_print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">print_a</span><span class="p">()</span> <span class="c1"># print_a メソッドの呼び出し</span>
 
-<span class="n">FourthClass</span><span class="p">()</span><span class="o">.</span><span class="n">print_a</span><span class="p">()</span>
-<span class="n">FourthClass</span><span class="p">()</span><span class="o">.</span><span class="n">call_print</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-100
-100
-</pre></div></div>
-</div>
-</div>
-<div class="section" id="インスタンス">
-<h2>インスタンス<a class="headerlink" href="#インスタンス" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>アンケートのデータ整理を行う、<code class="docutils literal notranslate"><span class="pre">Survey</span></code> というクラスを作ったとしましょう。アンケートのデータ整理で行う操作はすべて共通ですが、いくつかの属性は異なるべきです（例えば、アンケートの実施年など）。</p>
-<p>クラスを呼び出すことによって、そのクラスの属性とメソッドを持つ <strong>インスタンス</strong> が作成されます。インスタンスを作成する際に、コントラクタというメソッドを使うことによって、同じクラスでも別の属性を付与することができます。</p>
-<p>コントラクタは、インスタンスを作成した場合に最初に実行されます。コントラクタは <code class="docutils literal notranslate"><span class="pre">__init__</span></code> というメソッド名になります。</p>
-<p>コントラクタの中で属性を定義することによって、インスタンス毎に別の属性を付与することができます。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">Five</span><span class="p">:</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Called!!!!&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">print_call</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling!!!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Five</span><span class="p">()</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Fourth</span><span class="p">()</span><span class="o">.</span><span class="n">print_a</span><span class="p">()</span>
+<span class="n">Fourth</span><span class="p">()</span><span class="o">.</span><span class="n">call_print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
+<div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Called!!!!
+100
+100
 </pre></div></div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
-</pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;__main__.Five at 0x226a79f7080&gt;
-</pre></div>
-</div>
-</div>
+<div class="section" id="コンストラクタ">
+<h3>コンストラクタ<a class="headerlink" href="#コンストラクタ" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>実は、インスタンスを作る際に、コンストラクタというメソッドが呼び出されます。</p>
+<p>Python では、<code class="docutils literal notranslate"><span class="pre">__init__</span></code> というのがそれで、init の前にアンダースコアを２つ前後に配置します。</p>
+<p>これらを特殊メソッドと呼び、クラスの振る舞いを変えることができます。</p>
+<p>コンストラクタに追加の引数を定義することによって、元の設計図に変化をつけたインスタンスを作れます。</p>
+<p>例えば、アンケートのデータ整理を行う、<code class="docutils literal notranslate"><span class="pre">Survey</span></code> というクラスを作ったとしましょう。</p>
+<p>アンケートのデータ整理で行う操作はすべて共通ですが、いくつかの属性は異なるべきです（例えば、アンケートの実施年など）。</p>
+<p>例えば、次のようにすれば、インスタンス属性を作ることができます。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="k">class</span> <span class="nc">Survey</span><span class="p">:</span>
 
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#クラス属性</span>
+    <span class="n">some_attribute</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span> <span class="c1"># コントラクタ</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span> <span class="c1"># インスタンス属性</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="n">this_year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
     <span class="k">def</span> <span class="nf">print_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
 </pre></div>
 </div>
 </div>
-<p>クラスの中でメソッド外で定義した属性を <strong>クラス属性</strong> と呼びます。これはクラスで共通です。一方、コントラクタ内で定義した属性を <strong>インスタンス属性</strong> と呼びます。これはインスタンスによって異なります。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Survey2010</span> <span class="o">=</span> <span class="n">Survey</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Survey2010</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Survey2010</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">survey2018</span> <span class="o">=</span> <span class="n">Survey</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2018</span><span class="p">)</span>
+<span class="n">survey2019</span> <span class="o">=</span> <span class="n">Survey</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2019</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">survey2018</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">survey2019</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -634,62 +625,56 @@ Called!!!!
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-100
-100
-2010
+2018
+2019
 </pre></div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<p>クラス属性では、変数を定義すればクラス属性になりましたが、インスタンス属性は <code class="docutils literal notranslate"><span class="pre">self.属性名</span></code> としないとインスタンス属性になりません。</p>
+<p>普通に変数を作成すると、ローカル変数になります。</p>
+<p>実際、<code class="docutils literal notranslate"><span class="pre">__init__</span></code> メソッドで <code class="docutils literal notranslate"><span class="pre">this_year</span></code> という変数を定義していますが、メソッド外からは参照できません。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Survey2011</span> <span class="o">=</span> <span class="n">Survey</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2011</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Survey2011</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Survey2011</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># survey2019.this_year</span>
+
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-100
-2011
-</pre></div></div>
 </div>
 </div>
 <div class="section" id="継承">
-<h2>継承<a class="headerlink" href="#継承" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ほとんど年のアンケートではデータ整理の操作は同じですが、ある年だけ異なる操作と属性が必要だったとしましょう。<strong>継承</strong> を使うことによって、属性とメソッドを引き継いで、新たにクラスを定義することができます。</p>
+<h3>継承<a class="headerlink" href="#継承" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ほとんど年のアンケートではデータ整理の操作は同じですが、ある年だけ異なる操作と属性が必要だったとしましょう。</p>
+<p><strong>継承</strong> を使うことによって、属性とメソッドを引き継いで、新たにクラスを定義することができます。</p>
 <p>クラスの定義の際に、<code class="docutils literal notranslate"><span class="pre">クラス名（継承クラス名）</span></code> とすることによって、継承を行うことができます。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="k">class</span> <span class="nc">SurveyExtra</span><span class="p">(</span><span class="n">Survey</span><span class="p">):</span>
 
     <span class="n">b</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># 追加クラス属性</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="c1"># Survey のコントラクタ</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="c1"># 追加インスタンス属性</span>
 
     <span class="k">def</span> <span class="nf">print_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># 追加メソッド</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+
 </pre></div>
 </div>
 </div>
 <p>新たに定義した <code class="docutils literal notranslate"><span class="pre">SurveyExtra</span></code> は、継承した <code class="docutils literal notranslate"><span class="pre">Survey</span></code> の属性とメソッドを持っています。まずはそれを確認してみます。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">Survey2009</span> <span class="o">=</span> <span class="n">SurveyExtra</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2009</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Survey2009</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Survey2009</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="n">Survey2009</span><span class="o">.</span><span class="n">print_a</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -699,17 +684,17 @@ Called!!!!
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-100
-100
+3
+3
 </pre></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">SurveyExtra</span></code> で定義した属性とメソッドを呼び出します。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">Survey2009</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="k">print</span><span class="p">(</span><span class="n">Survey2009</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
 <span class="n">Survey2009</span><span class="o">.</span><span class="n">print_b</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -724,7 +709,9 @@ Called!!!!
 </pre></div></div>
 </div>
 <p>継承したクラスと同じ名前のメソッドを定義すると、継承したクラスのメソッドは上書きされますが、<code class="docutils literal notranslate"><span class="pre">super()</span></code> を使えば継承したクラスを呼び出すことができます。</p>
-<p>これによって、例えば <code class="docutils literal notranslate"><span class="pre">Survey</span></code> のインスタンス属性に新たにインスタンス属性を追加できます。 <code class="docutils literal notranslate"><span class="pre">SurveyExtra</span></code> のコントラクタを詳しく解説すると、 1. まず引数に <code class="docutils literal notranslate"><span class="pre">Survey</span></code> のコントラクタで必要だった <code class="docutils literal notranslate"><span class="pre">year</span></code> と、新たに <code class="docutils literal notranslate"><span class="pre">b</span></code> という引数を追加しています。 2. <code class="docutils literal notranslate"><span class="pre">super().__init__(year)</span></code> によって、<code class="docutils literal notranslate"><span class="pre">Survey</span></code> のコントラクタを実行しています。これによってインスタンス属性 <code class="docutils literal notranslate"><span class="pre">year</span></code> が付与されました。 3. 最後に、 <code class="docutils literal notranslate"><span class="pre">self.c</span> <span class="pre">=</span> <span class="pre">c</span></code> で新たなインスタンス属性を付与しました。</p>
+<p>これによって、例えば <code class="docutils literal notranslate"><span class="pre">Survey</span></code> のインスタンス属性に新たにインスタンス属性を追加できます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">SurveyExtra</span></code> のコントラクタを詳しく解説すると、 1. まず引数に <code class="docutils literal notranslate"><span class="pre">Survey</span></code> のコントラクタで必要だった <code class="docutils literal notranslate"><span class="pre">year</span></code> と、新たに <code class="docutils literal notranslate"><span class="pre">b</span></code> という引数を追加しています。 2. <code class="docutils literal notranslate"><span class="pre">super().__init__(year)</span></code> によって、<code class="docutils literal notranslate"><span class="pre">Survey</span></code> のコントラクタを実行しています。これによってインスタンス属性 <code class="docutils literal notranslate"><span class="pre">year</span></code> が付与されました。 3. 最後に、 <code class="docutils literal notranslate"><span class="pre">self.c</span> <span class="pre">=</span> <span class="pre">c</span></code> で新たなインスタンス属性を付与しました。</p>
+</div>
 </div>
 </div>
 
