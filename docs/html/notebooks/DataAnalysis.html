@@ -791,37 +791,16 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>ここで実際に、<code class="docutils literal notranslate"><span class="pre">numpy</span></code> の計算が高速だという例をお見せしましょう。 10000 個の要素を足し合わせていく作業をループ文と numpy の <code class="docutils literal notranslate"><span class="pre">sum</span></code> を使って試してみます。</p>
+<p>ここで実際に、<code class="docutils literal notranslate"><span class="pre">numpy</span></code> の計算が高速だという例をお見せします。 10000 個の要素を足し合わせていく作業をループ文と numpy の <code class="docutils literal notranslate"><span class="pre">sum</span></code> を使って試してみます。 セルの最初に <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> を使うことによって、そのセルの計算速度を測定できます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">Z</span><span class="o">.</span><span class="n">shape</span>
-
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(10000,)
-</pre></div>
-</div>
-</div>
-<p>セルの最初に <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> を使うことによって、そのセルの計算速度を測定できます。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="n">timeit</span>
 <span class="n">sum_Z</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-    <span class="n">sum_Z</span> <span class="o">+=</span> <span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sum_Z</span> <span class="o">+=</span> <span class="mi">1</span>
 
 </pre></div>
 </div>
@@ -831,8 +810,17 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-2.27 ms ± 337 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+1.26 ms ± 174 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
@@ -849,10 +837,10 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-9.02 µs ± 891 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+20.8 µs ± 7.98 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div></div>
 </div>
-<p>桁が違うほどの差でした。大規模な計算をするときは、できるだけ <code class="docutils literal notranslate"><span class="pre">numpy</span></code> を使うのを勧めます。</p>
+<p>大規模な計算をするときは、できるだけ <code class="docutils literal notranslate"><span class="pre">numpy</span></code> を使うのを勧めます。</p>
 </div>
 <div class="section" id="ブロードキャスト">
 <h3>ブロードキャスト<a class="headerlink" href="#ブロードキャスト" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -920,9 +908,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[0.10724676, 0.37583227, 0.60074876],
-       [0.84121071, 0.73996666, 0.11200819],
-       [0.45877295, 0.16841672, 0.95519365]])
+<span></span>array([[0.81604635, 0.9374695 , 0.61670905],
+       [0.15385651, 0.35901032, 0.84625432],
+       [0.88591126, 0.40596778, 0.14039651]])
 </pre></div>
 </div>
 </div>
@@ -941,9 +929,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[-0.92666541,  0.64767024,  0.59618893],
-       [ 0.76713965,  0.05472876,  0.98779405],
-       [-0.46020569, -0.72901896,  0.19242442]])
+<span></span>array([[ 1.28406631, -0.53822411,  0.80013257],
+       [ 0.81690022, -0.58300972, -2.70036416],
+       [-0.59812875, -1.26783858,  0.7256989 ]])
 </pre></div>
 </div>
 </div>
@@ -982,7 +970,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([&#39;Japan&#39;, &#39;Japan&#39;], dtype=&#39;&lt;U5&#39;)
+<span></span>array([&#39;Japan&#39;, &#39;China&#39;], dtype=&#39;&lt;U5&#39;)
 </pre></div>
 </div>
 </div>
@@ -1000,7 +988,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([&#39;China&#39;, &#39;Japan&#39;], dtype=&#39;&lt;U5&#39;)
+<span></span>array([&#39;China&#39;, &#39;Korea&#39;], dtype=&#39;&lt;U5&#39;)
 </pre></div>
 </div>
 </div>
@@ -1018,7 +1006,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([&#39;China&#39;, &#39;Japan&#39;], dtype=&#39;&lt;U5&#39;)
+<span></span>array([&#39;Japan&#39;, &#39;Japan&#39;], dtype=&#39;&lt;U5&#39;)
 </pre></div>
 </div>
 </div>
@@ -1037,7 +1025,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([8.58939811, 5.02390563, 0.77244024])
+<span></span>array([4.15855897, 6.61777927, 5.16556098])
 </pre></div>
 </div>
 </div>
@@ -1123,8 +1111,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([-1.8985275 ,  0.76319571, -0.81988961,  1.03908185,  0.84136466,
-       -0.57198395, -0.27279906,  0.87593518,  0.95280215, -0.65061735])
+<span></span>array([ 1.00585753, -1.03111348,  0.16008137, -0.2425014 ,  0.02450575,
+        0.88017105, -1.32771746, -0.59314082, -0.15458929, -1.02338975])
 </pre></div>
 </div>
 </div>
@@ -1206,7 +1194,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Ttest_indResult(statistic=-18.03342425422033, pvalue=5.70500072777796e-13)
+<span></span>Ttest_indResult(statistic=-20.51082893599917, pvalue=6.229373675859823e-14)
 </pre></div>
 </div>
 </div>
@@ -1801,7 +1789,7 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">match</span></code> はマッチング文と正確にマッチしているか、<code class="docutils literal notranslate"><span class="pre">contains</span></code> はマッチング文を含んでいるかを返します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">match</span></code> はマッチング文が先頭からマッチしているか、<code class="docutils literal notranslate"><span class="pre">contains</span></code> はマッチング文を含んでいるかを返します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
 </pre></div>
@@ -2904,7 +2892,7 @@ Name: one, dtype: bool
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1a1ac56908&gt;
+<span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1a1943cac8&gt;
 </pre></div>
 </div>
 </div>
