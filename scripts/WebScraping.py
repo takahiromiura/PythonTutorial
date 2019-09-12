@@ -94,26 +94,25 @@ print(topics[0].select('li')[0].text)
 # %%
 news_topics = {}
 for topic in topics:
-    topic_title = topic.select('.topicsList_title')[0].text
-    news_topics[topic_title] = [news.text for news in topic.select('li')]
+      topic_title = topic.select('.topicsList_title')[0].text
+      news_topics[topic_title] = []
+      for news in topic.select('li'):
+              news_topics[topic_title].append(news.text)
 
 # %%
 news_topics['国内']
 # %% [markdown]
+#
+# ちなみに、さきほどの処理は次のようにもかけます。
 # `[news.text for news in topic.select('li')]` はリスト内包表記というものです。
 # ここでは、`li` 要素を順に `news` に格納し、その要素の内容を `news.text` で取り出し、リストに入れていく処理をしています。
-#
-# ちなみに、さきほどの処理は次と同じです。
-# %%
-# news_list = {}
-# for topic in topics:
-#       topic_title = topic.select('.topicsList_title')[0].text
-#       news_topics[topic_title] = []
-#       for news in topic.select('li'):
-#               news_topics[topic_title].append(news.text)
-#
-# %% [markdown]
 # リスト内包表記は、普通にループ文を書くよりもスッキリとして書け、また早く処理することができます。
+
+# %%
+# news_topics = {}
+# for topic in topics:
+#     topic_title = topic.select('.topicsList_title')[0].text
+#     news_topics[topic_title] = [news.text for news in topic.select('li')]
 # %% [markdown]
 # せっかくなので、`pandas` の `DataFrame` に変換しましょう。
 # `dict` から `DataFrame` にするには、`from_dict` を使います。
