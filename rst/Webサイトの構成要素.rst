@@ -120,7 +120,6 @@ table 要素
       <td>要素21</td> <td>要素22</td>
     </tr>
   </table>
-  <p></p>
 
 .. raw:: html
 
@@ -382,7 +381,7 @@ CSS
   <p>以下が Python のサイトです。</p>
   <a href='https://www.python.org/'>Python</a>
 
-上の文は `このページ <html/example.html>`_ のように表示されるはずです。
+上の文は `このページ <../../../html/example.html>`_ のように表示されるはずです。
 
 デザインのセンスが全く感じられないでしょう。
 普段見ている Web ページでは、文章が左端に固まっていないし、もう少し行間も適切です。
@@ -406,7 +405,10 @@ Web スクレイピングをする際にも、この **セレクタ** を用い�
 .. raw:: html
 
   <style>
-    #h1{color:rgb(255,0,0)}
+    #h1{
+      color: rgb(255,0,0);
+      background-color: rgb(255, 255, 255);
+    }
   </style>
   <h1 id="h1">HTML</h1>
 
@@ -510,37 +512,88 @@ CSS で ``id`` を指定する場合、セレクタは ``#id名`` とします�
 -----------------------------------------------
 結合子を使うことによって、要素の子孫、兄弟関係にある要素を指定できます。
 
-E F
+E F　（子孫セレクタ）
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 E 要素の子孫の全ての F 要素
 
-次の例は、``span`` 要素の子孫の ``p`` 要素を指定しています。
-一方、``span`` 要素の子孫ではない ``p`` 要素、 ``span`` 要素の子孫の ``span`` 要素は指定されません。
+次の例は、``p`` 要素の子孫の ``span`` 要素を指定しています。
+一方、``p`` 要素の子孫ではない ``span`` 要素は指定されません。
 
 .. code-block:: html
 
   <style>
-    span p{color:#008080}
+    p span{color:#008080}
   </style>
-  <span>果物
-    <p>リンゴ</p>
-    <p>メロン</p>
+  <p>果物
+    <span>リンゴ</span>
+    <span>メロン</span>
     <span>みかん</span>
-  </span>
-  <p>牛肉</p>
+  </p>
+  <span>牛肉</span>
 
 .. raw:: html
 
   <style>
-    span p{color:#008080}
+    p span{color:#008080}
   </style>
-  <span>果物
-    <p>リンゴ</p>
-    <p>メロン</p>
+  <p>果物
+    <span>リンゴ</span>
+    <span>メロン</span>
     <span>みかん</span>
-  </span>
-  <p>牛肉</p>
+  </p>
+  <span>牛肉</span>
 
+E>F　（子セレクタ）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E 要素の子の F 要素
+
+次の例は、``p`` 要素の子の ``span`` 要素を指定しています。
+``p`` 要素の孫の ``span`` は指定されません。
+
+.. code-block:: html
+
+  <style>
+    p>span{color:#008080}
+  </style>
+  <p>果物
+    <span>リンゴ</span>
+    <div>
+      <span>メロン</span>
+    </div>
+  </p>
+
+.. raw:: html
+
+  <style>
+    p>span{color:#008080}
+  </style>
+  <p>果物
+    <span>リンゴ</span>
+    <div>
+      <span>メロン</span>
+    </div>
+  </p>
+
+E,F （複数セレクタ）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`,` で区切ると、複数の要素を指定できます。
+次の例は ``fruits`` クラスと ``meat`` 要素を指定します。
+
+.. code-block:: html
+
+  <style>
+    .fruits,.meat{color:#008080}
+  </style>
+  <p class="fruits">果物</p>
+  <span class="meat">牛肉</span>
+
+.. raw:: html
+
+  <style>
+    .fruits,.meat{color:#008080}
+  </style>
+  <p class="fruits">果物</p>
+  <span class="meat">牛肉</span>
 
 まだまだ説明できていない様々なセレクタがあります。
 `HTML クイックリファレンス <http://www.htmq.com/csskihon/005.shtml>`_ はセレクタを網羅しているので、参照してみるとよいでしょう。
