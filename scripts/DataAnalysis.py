@@ -131,27 +131,23 @@ A * B
 C = np.array([[1, 3, 5], [2, 9, 7], [2, 8, 4]])
 np.linalg.inv(C)
 #%% [markdown]
-# ここで実際に、`numpy` の計算が高速だという例をお見せしましょう。
+# ここで実際に、`numpy` の計算が高速だという例をお見せします。
 # 10000 個の要素を足し合わせていく作業をループ文と numpy の `sum` を使って試してみます。
-
-#%%
-Z = np.ones(10000)
-Z.shape
-
-#%% [markdown]
 # セルの最初に `%%timeit` を使うことによって、そのセルの計算速度を測定できます。 
 
 #%%
 %%timeit
 sum_Z = 0
 for i in range(10000):
-    sum_Z += Z[i]
+    sum_Z += 1
 
 #%%
+Z = np.ones(10000)
+# %%
 %%timeit 
 np.sum(Z)
 #%% [markdown]
-# 桁が違うほどの差でした。大規模な計算をするときは、できるだけ `numpy` を使うのを勧めます。
+# 大規模な計算をするときは、できるだけ `numpy` を使うのを勧めます。
 #%% [markdown]
 #### ブロードキャスト
 # `ndarray` には、ブロードキャストという機能がついています。
@@ -414,7 +410,7 @@ number_with_text.str.extract(r'(\D+)', expand = False)
 #%%
 number_with_text.str.replace(r'(\d)', '')
 #%% [markdown]
-# `match` はマッチング文と正確にマッチしているか、`contains` はマッチング文を含んでいるかを返します。
+# `match` はマッチング文が先頭からマッチしているか、`contains` はマッチング文を含んでいるかを返します。
 
 #%%
 match_text = pd.Series(['1', 'one2', 'one'])
